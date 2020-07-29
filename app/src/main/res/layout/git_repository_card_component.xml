@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gitRepositoryCardDto"
+            type="br.com.argmax.githubconsumer.ui.components.repositorycard.dto.GitRepositoryCardDto" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="75"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/git_repository_card_repository_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@{gitRepositoryCardDto.gitRepositoryName}"
+                android:textColor="@color/blueGray600"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Nome Repositório" />
+
+            <TextView
+                android:id="@+id/git_repository_card_git_repository_description_text_view"
+                visibleOrGone="@{gitRepositoryCardDto.gitRepositoryDescription != null}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLength="75"
+                android:text="@{gitRepositoryCardDto.gitRepositoryDescription}"
+                android:textColor="@color/blueGray900"
+                android:textSize="14sp"
+                tools:text="Descrição do respositório Lorem Ipsum is simply dummy text of the printing and" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp">
+
+                <TextView
+                    android:id="@+id/git_repository_card_git_repository_forks_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:drawableStart="@drawable/ic_fork"
+                    android:drawablePadding="2dp"
+                    android:text="@{gitRepositoryCardDto.forkQuantity}"
+                    android:textColor="@color/yellow700"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="640" />
+
+                <TextView
+                    android:id="@+id/git_repository_card_git_repository_stars_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_star"
+                    android:drawablePadding="4dp"
+                    android:text="@{gitRepositoryCardDto.starsQuantity}"
+                    android:textColor="@color/yellow700"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="100" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_weight="25"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/git_repository_card_user_image_image_view"
+                imageUri="@{gitRepositoryCardDto.userImageUrl}"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                tools:src="@drawable/ic_user" />
+
+            <TextView
+                android:id="@+id/git_repository_card_user_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@{gitRepositoryCardDto.userName}"
+                android:textColor="@color/blue600"
+                tools:text="username" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
