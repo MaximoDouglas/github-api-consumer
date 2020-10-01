@@ -45,7 +45,7 @@ jobs:
       run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;20.0.5594570"
     # Step to build the project and generate APK
     - name: Build Debug 
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleMockedEnvironment
     # Step to save the APK as an Artifact
     - name: Upload APK on Build Artifacts
       uses: actions/upload-artifact@v1
