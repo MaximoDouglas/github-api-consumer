@@ -27,7 +27,7 @@ jobs:
         java-version: 1.8
     #  Step para rodar testes unitários
     - name: Unit tests
-      run: bash ./gradlew test --stacktrace
+      run: bash ./gradlew testMockedEnvironment --stacktrace
       
   build-and-generate-apk:
     # The runner type which the job will run in
