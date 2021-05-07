@@ -8,9 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,11 +27,11 @@ import br.com.argmax.githubconsumer.utils.NavigationArgumentKeys.KEY_OWNER_LOGIN
 import br.com.argmax.githubconsumer.utils.NavigationArgumentKeys.KEY_REPOSITORY_NAME
 import br.com.argmax.githubconsumer.utils.StringUtils.gitPullRequestClosedLabelStringFormat
 import br.com.argmax.githubconsumer.utils.StringUtils.gitPullRequestOpenLabelStringFormat
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SelectGitPullRequestFragment : Fragment(), OnPullRequestClickListener {
 
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val mViewModel by viewModels<SelectGitPullRequestViewModel> { viewModelFactory }
+    private val mViewModel: SelectGitPullRequestViewModel by viewModel()
 
     private var mBinding: SelectGitPullRequestFragmentBinding? = null
     private var mAdapter = SelectGitPullRequestAdapter(this)

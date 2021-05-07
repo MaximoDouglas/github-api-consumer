@@ -4,6 +4,7 @@ import android.app.Activity
 import org.junit.After
 import org.junit.Before
 import org.junit.runner.RunWith
+import org.koin.core.context.stopKoin
 import org.robolectric.Robolectric
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.android.controller.ActivityController
@@ -33,6 +34,8 @@ abstract class BaseComponentTest {
             .pause()
             .stop()
             .destroy()
+
+        stopKoin()
     }
 
 }
