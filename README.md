@@ -12,7 +12,7 @@ App to list popular Java Repositories on github.
 - Retrofit
 - GSON
 - Glide
-- Dagger 2
+- Koin
 - Espresso for instrumentation tests
 - JUnit for business logic unit tests
 - JUnit for ViewModel unit tests

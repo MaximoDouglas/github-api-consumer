@@ -1,4 +1,4 @@
-package br.com.argmax.githubconsumer.ui.modules.gitpullrequests.listeners
+package br.com.argmax.githubconsumer.ui.gitpullrequests.listeners
 
 interface OnPullRequestClickListener {
 

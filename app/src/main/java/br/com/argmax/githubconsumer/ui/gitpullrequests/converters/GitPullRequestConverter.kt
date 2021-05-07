@@ -1,4 +1,4 @@
-package br.com.argmax.githubconsumer.ui.modules.gitpullrequests.converters
+package br.com.argmax.githubconsumer.ui.gitpullrequests.converters
 
 import br.com.argmax.githubconsumer.domain.entities.pullrequest.GitPullRequestDto
 import br.com.argmax.githubconsumer.domain.entities.pullrequest.PullRequestStateEnum

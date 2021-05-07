@@ -1,8 +1,6 @@
 package br.com.argmax.githubconsumer.service.gitpullrequest
 
-import javax.inject.Inject
-
-class GitPullRequestRemoteDataSourceImpl @Inject constructor(
+class GitPullRequestRemoteDataSourceImpl(
     private val mGitPullRequestApiDataSource: GitPullRequestApiDataSource
 ) : GitPullRequestRemoteDataSource {
 

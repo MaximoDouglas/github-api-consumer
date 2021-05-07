@@ -13,4 +13,4 @@ import org.junit.runners.Suite
     SelectGitRepositoryFragmentTest::class,
     SelectGitPullRequestFragmentTest::class
 )
-class UISuiteTest
+class InstrumentedTestSuite
