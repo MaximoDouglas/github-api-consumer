@@ -1,4 +1,4 @@
-package br.com.argmax.githubconsumer.ui.modules.gitrepositories.converters
+package br.com.argmax.githubconsumer.ui.gitrepositories.converters
 
 import br.com.argmax.githubconsumer.domain.entities.repository.GitRepositoryDto
 import br.com.argmax.githubconsumer.ui.components.repositorycard.dto.GitRepositoryCardDto

@@ -1,4 +1,4 @@
-package br.com.argmax.githubconsumer.ui.modules.gitrepositories
+package br.com.argmax.githubconsumer.ui.gitrepositories
 
 import androidx.lifecycle.*
 import br.com.argmax.githubconsumer.domain.entities.repository.GitRepositoryDto
@@ -7,10 +7,9 @@ import br.com.argmax.githubconsumer.utils.CoroutineContextProvider
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
 @Suppress("UNCHECKED_CAST")
-class SelectGitRepositoryViewModel @Inject constructor(
+class SelectGitRepositoryViewModel(
     private val gitRepositoryRemoteDataSource: GitRepositoryRemoteDataSource,
     private val contextProvider: CoroutineContextProvider
 ) : ViewModel() {

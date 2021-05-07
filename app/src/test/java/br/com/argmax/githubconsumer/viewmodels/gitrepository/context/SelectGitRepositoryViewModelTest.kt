@@ -4,8 +4,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import br.com.argmax.githubconsumer.domain.entities.repository.GitRepositoryDto
 import br.com.argmax.githubconsumer.service.gitrepository.GitRepositoryRemoteDataSource
-import br.com.argmax.githubconsumer.ui.modules.gitrepositories.SelectGitRepositoryViewModel
-import br.com.argmax.githubconsumer.ui.modules.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
+import br.com.argmax.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel
+import br.com.argmax.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
 import br.com.argmax.githubconsumer.viewmodels.utils.TestContextProvider
 import br.com.argmax.githubconsumer.viewmodels.utils.TestCoroutineRule
 import br.com.argmax.githubconsumer.viewmodels.utils.faker.GitRepositoryDtoFaker

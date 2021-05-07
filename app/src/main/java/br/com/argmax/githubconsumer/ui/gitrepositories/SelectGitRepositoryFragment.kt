@@ -1,4 +1,4 @@
-package br.com.argmax.githubconsumer.ui.modules.gitrepositories
+package br.com.argmax.githubconsumer.ui.gitrepositories
 
 import android.content.Context
 import android.os.Bundle
@@ -19,17 +19,14 @@ import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.SelectGitRepositoryFragmentBinding
 import br.com.argmax.githubconsumer.domain.entities.repository.GitRepositoryDto
 import br.com.argmax.githubconsumer.ui.components.repositorycard.dto.GitRepositoryCardDto
-import br.com.argmax.githubconsumer.ui.modules.gitrepositories.SelectGitRepositoryFragmentDirections.actionSelectRepositoryFragmentToSelectGitPullRequestFragment
-import br.com.argmax.githubconsumer.ui.modules.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
-import br.com.argmax.githubconsumer.ui.modules.gitrepositories.adapters.SelectGitRepositoryAdapter
-import br.com.argmax.githubconsumer.ui.modules.gitrepositories.converters.GitRepositoryConverter.convertDtoListToCardDtoList
-import br.com.argmax.githubconsumer.ui.modules.gitrepositories.listeners.OnGitRepositoryClickListener
+import br.com.argmax.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
+import br.com.argmax.githubconsumer.ui.gitrepositories.adapters.SelectGitRepositoryAdapter
+import br.com.argmax.githubconsumer.ui.gitrepositories.converters.GitRepositoryConverter.convertDtoListToCardDtoList
+import br.com.argmax.githubconsumer.ui.gitrepositories.listeners.OnGitRepositoryClickListener
 import br.com.argmax.githubconsumer.utils.EndlessRecyclerOnScrollListener
-import javax.inject.Inject
 
 class SelectGitRepositoryFragment : Fragment(), OnGitRepositoryClickListener {
 
-    @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private val mViewModel by viewModels<SelectGitRepositoryViewModel> { viewModelFactory }
 
@@ -52,14 +49,6 @@ class SelectGitRepositoryFragment : Fragment(), OnGitRepositoryClickListener {
         )
 
         return mBinding?.root
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-        if (requireActivity() is MainActivity) {
-            (requireActivity() as MainActivity).mainComponent.inject(this)
-        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -139,12 +128,12 @@ class SelectGitRepositoryFragment : Fragment(), OnGitRepositoryClickListener {
     }
 
     override fun onClick(ownerLogin: String, repositoryName: String) {
-        findNavController().navigate(
-            actionSelectRepositoryFragmentToSelectGitPullRequestFragment(
-                ownerLogin,
-                repositoryName
-            )
-        )
+//        findNavController().navigate(
+//            actionSelectRepositoryFragmentToSelectGitPullRequestFragment(
+//                ownerLogin,
+//                repositoryName
+//            )
+//        )
     }
 
 }

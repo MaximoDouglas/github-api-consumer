@@ -1,4 +1,4 @@
-package br.com.argmax.githubconsumer.ui.modules.gitpullrequests.adapters
+package br.com.argmax.githubconsumer.ui.gitpullrequests.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +10,7 @@ import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.GitPullRequestCardViewHolderBinding
 import br.com.argmax.githubconsumer.ui.components.pullrequestcard.dtos.GitPullRequestCardDto
 import br.com.argmax.githubconsumer.ui.components.repositorycard.dto.GitRepositoryCardDto
-import br.com.argmax.githubconsumer.ui.modules.gitpullrequests.listeners.OnPullRequestClickListener
+import br.com.argmax.githubconsumer.ui.gitpullrequests.listeners.OnPullRequestClickListener
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.git_pull_request_card_view_holder.*
 

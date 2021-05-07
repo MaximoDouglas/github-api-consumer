@@ -7,41 +7,36 @@ import br.com.argmax.githubconsumer.service.gitpullrequest.GitPullRequestRemoteD
 import br.com.argmax.githubconsumer.service.gitrepository.GitRepositoryApiDataSource
 import br.com.argmax.githubconsumer.service.gitrepository.GitRepositoryRemoteDataSource
 import br.com.argmax.githubconsumer.service.gitrepository.GitRepositoryRemoteDataSourceImpl
-import dagger.Binds
-import dagger.Module
-import dagger.Provides
-import javax.inject.Singleton
 
-@Module
 abstract class RemoteDataSourceModule {
-
-    @Singleton
-    @Binds
-    abstract fun provideGitRepositoryRemoteDataSource(
-        remoteDataSource: GitRepositoryRemoteDataSourceImpl
-    ): GitRepositoryRemoteDataSource
-
-    @Singleton
-    @Binds
-    abstract fun provideGitPullRequestRemoteDataSource(
-        remoteDataSource: GitPullRequestRemoteDataSourceImpl
-    ): GitPullRequestRemoteDataSource
+//
+//    @Singleton
+//    @Binds
+//    abstract fun provideGitRepositoryRemoteDataSource(
+//        remoteDataSource: GitRepositoryRemoteDataSourceImpl
+//    ): GitRepositoryRemoteDataSource
+//
+//    @Singleton
+//    @Binds
+//    abstract fun provideGitPullRequestRemoteDataSource(
+//        remoteDataSource: GitPullRequestRemoteDataSourceImpl
+//    ): GitPullRequestRemoteDataSource
 
 }
 
-@Module
+
 object ApiDataSourceModule {
 
-    @Provides
-    @Singleton
-    fun provideGitRepositoryApiDataSource(): GitRepositoryApiDataSource {
-        return ApiDataSource.createService(GitRepositoryApiDataSource::class.java)
-    }
-
-    @Provides
-    @Singleton
-    fun provideGitPullRequestApiDataSource(): GitPullRequestApiDataSource {
-        return ApiDataSource.createService(GitPullRequestApiDataSource::class.java)
-    }
+//    @Provides
+//    @Singleton
+//    fun provideGitRepositoryApiDataSource(): GitRepositoryApiDataSource {
+//        return ApiDataSource.createService(GitRepositoryApiDataSource::class.java)
+//    }
+//
+//    @Provides
+//    @Singleton
+//    fun provideGitPullRequestApiDataSource(): GitPullRequestApiDataSource {
+//        return ApiDataSource.createService(GitPullRequestApiDataSource::class.java)
+//    }
 
 }

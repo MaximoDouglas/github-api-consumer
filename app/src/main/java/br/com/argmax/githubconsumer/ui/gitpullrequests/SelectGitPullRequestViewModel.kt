@@ -1,4 +1,4 @@
-package br.com.argmax.githubconsumer.ui.modules.gitpullrequests
+package br.com.argmax.githubconsumer.ui.gitpullrequests
 
 import androidx.lifecycle.*
 import br.com.argmax.githubconsumer.domain.entities.pullrequest.GitPullRequestDto
@@ -7,10 +7,9 @@ import br.com.argmax.githubconsumer.utils.CoroutineContextProvider
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
 @Suppress("UNCHECKED_CAST")
-class SelectGitPullRequestViewModel @Inject constructor(
+class SelectGitPullRequestViewModel(
     private val gitPullRequestRemoteDataSource: GitPullRequestRemoteDataSource,
     private val contextProvider: CoroutineContextProvider
 ) : ViewModel() {

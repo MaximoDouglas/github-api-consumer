@@ -1,6 +1,5 @@
-package br.com.argmax.githubconsumer.ui.modules.gitpullrequests
+package br.com.argmax.githubconsumer.ui.gitpullrequests
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -16,26 +15,23 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import br.com.argmax.githubconsumer.MainActivity
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.SelectGitPullRequestFragmentBinding
 import br.com.argmax.githubconsumer.domain.entities.pullrequest.GitPullRequestDto
 import br.com.argmax.githubconsumer.ui.components.pullrequestcard.dtos.GitPullRequestCardDto
-import br.com.argmax.githubconsumer.ui.modules.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
-import br.com.argmax.githubconsumer.ui.modules.gitpullrequests.adapters.SelectGitPullRequestAdapter
-import br.com.argmax.githubconsumer.ui.modules.gitpullrequests.converters.GitPullRequestConverter.convertDtoListToCardDtoList
-import br.com.argmax.githubconsumer.ui.modules.gitpullrequests.listeners.OnPullRequestClickListener
+import br.com.argmax.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
+import br.com.argmax.githubconsumer.ui.gitpullrequests.adapters.SelectGitPullRequestAdapter
+import br.com.argmax.githubconsumer.ui.gitpullrequests.converters.GitPullRequestConverter.convertDtoListToCardDtoList
+import br.com.argmax.githubconsumer.ui.gitpullrequests.listeners.OnPullRequestClickListener
 import br.com.argmax.githubconsumer.utils.EndlessRecyclerOnScrollListener
 import br.com.argmax.githubconsumer.utils.FragmentUtils.bundleContainsKeys
 import br.com.argmax.githubconsumer.utils.NavigationArgumentKeys.KEY_OWNER_LOGIN
 import br.com.argmax.githubconsumer.utils.NavigationArgumentKeys.KEY_REPOSITORY_NAME
 import br.com.argmax.githubconsumer.utils.StringUtils.gitPullRequestClosedLabelStringFormat
 import br.com.argmax.githubconsumer.utils.StringUtils.gitPullRequestOpenLabelStringFormat
-import javax.inject.Inject
 
 class SelectGitPullRequestFragment : Fragment(), OnPullRequestClickListener {
 
-    @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private val mViewModel by viewModels<SelectGitPullRequestViewModel> { viewModelFactory }
 
@@ -79,12 +75,6 @@ class SelectGitPullRequestFragment : Fragment(), OnPullRequestClickListener {
         )
 
         return mBinding?.root
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-        (requireActivity() as MainActivity).mainComponent.inject(this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
