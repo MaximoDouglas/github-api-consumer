@@ -1,8 +1,6 @@
 package br.com.argmax.githubconsumer.service.gitrepository
 
-import javax.inject.Inject
-
-class GitRepositoryRemoteDataSourceImpl @Inject constructor(
+class GitRepositoryRemoteDataSourceImpl(
     private val mGitRepositoryApiDataSource: GitRepositoryApiDataSource
 ) : GitRepositoryRemoteDataSource {
 

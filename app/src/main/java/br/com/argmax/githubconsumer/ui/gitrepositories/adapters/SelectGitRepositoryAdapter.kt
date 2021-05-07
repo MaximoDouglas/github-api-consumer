@@ -1,4 +1,4 @@
-package br.com.argmax.githubconsumer.ui.modules.gitrepositories.adapters
+package br.com.argmax.githubconsumer.ui.gitrepositories.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.GitRepositoryCardViewHolderBinding
 import br.com.argmax.githubconsumer.ui.components.repositorycard.dto.GitRepositoryCardDto
-import br.com.argmax.githubconsumer.ui.modules.gitrepositories.listeners.OnGitRepositoryClickListener
+import br.com.argmax.githubconsumer.ui.gitrepositories.listeners.OnGitRepositoryClickListener
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.git_repository_card_view_holder.*
 

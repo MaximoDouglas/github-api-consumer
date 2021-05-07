@@ -1,4 +1,4 @@
-package br.com.argmax.githubconsumer.ui.modules.gitrepositories.listeners
+package br.com.argmax.githubconsumer.ui.gitrepositories.listeners
 
 interface OnGitRepositoryClickListener {
 

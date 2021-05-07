@@ -5,8 +5,8 @@ import androidx.lifecycle.Observer
 import br.com.argmax.githubconsumer.domain.entities.pullrequest.GitPullRequestDto
 import br.com.argmax.githubconsumer.viewmodels.utils.faker.GitPullRequestDtoFaker
 import br.com.argmax.githubconsumer.service.gitpullrequest.GitPullRequestRemoteDataSource
-import br.com.argmax.githubconsumer.ui.modules.gitpullrequests.SelectGitPullRequestViewModel
-import br.com.argmax.githubconsumer.ui.modules.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
+import br.com.argmax.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel
+import br.com.argmax.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
 import br.com.argmax.githubconsumer.viewmodels.utils.TestContextProvider
 import br.com.argmax.githubconsumer.viewmodels.utils.TestCoroutineRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
