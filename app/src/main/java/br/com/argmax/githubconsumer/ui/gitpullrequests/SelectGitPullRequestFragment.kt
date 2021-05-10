@@ -44,22 +44,6 @@ class SelectGitPullRequestFragment : Fragment(), OnPullRequestClickListener {
     private var mOpenPullRequestCounter: Int = 0
     private var mClosedPullRequestCounter: Int = 0
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        extractDataFromBundle(savedInstanceState)
-        extractDataFromBundle(arguments)
-    }
-
-    private fun extractDataFromBundle(bundle: Bundle?) {
-        val bundleContainsKeys = bundleContainsKeys(bundle, KEY_OWNER_LOGIN, KEY_REPOSITORY_NAME)
-
-        if (bundleContainsKeys) {
-            mOwnerLogin = bundle?.getString(KEY_OWNER_LOGIN)
-            mRepositoryName = bundle?.getString(KEY_REPOSITORY_NAME)
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -78,9 +62,24 @@ class SelectGitPullRequestFragment : Fragment(), OnPullRequestClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if (savedInstanceState != null) {
+            extractDataFromBundle(savedInstanceState)
+        } else if (arguments != null) {
+            extractDataFromBundle(arguments)
+        }
+
         setupToolbar()
         setupRecyclerView()
         setupViewModel()
+    }
+
+    private fun extractDataFromBundle(bundle: Bundle?) {
+        val bundleContainsKeys = bundleContainsKeys(bundle, KEY_OWNER_LOGIN, KEY_REPOSITORY_NAME)
+
+        if (bundleContainsKeys) {
+            mOwnerLogin = bundle?.getString(KEY_OWNER_LOGIN)
+            mRepositoryName = bundle?.getString(KEY_REPOSITORY_NAME)
+        }
     }
 
     private fun setupToolbar() {

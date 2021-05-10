@@ -1,4 +1,4 @@
-package br.com.argmax.githubconsumer.modules
+package br.com.argmax.githubconsumer.navigation
 
 import android.content.Intent
 import android.net.Uri

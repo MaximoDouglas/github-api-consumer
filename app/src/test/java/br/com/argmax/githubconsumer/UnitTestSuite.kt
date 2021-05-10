@@ -14,4 +14,4 @@ import org.junit.runners.Suite
     ViewModelSuiteTest::class,
     StringUtilsTest::class
 )
-class UnitSuiteTest
+class UnitTestSuite
