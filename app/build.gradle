@@ -20,21 +20,25 @@ android {
         testOptions.unitTests.includeAndroidResources = true
     }
 
-    testBuildType 'mockedEnvironment'
-
     buildTypes {
-        mockedEnvironment {
-            initWith debug
-            buildConfigField "String", "BASE_URL", "\"http://localhost:8500/\""
-        }
-
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", "\"https://api.github.com/\""
         }
 
         debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        mock {
+            buildConfigField "String", "BASE_URL", "\"http://localhost:8500/\""
+        }
+        prod {
             buildConfigField "String", "BASE_URL", "\"https://api.github.com/\""
         }
     }
@@ -102,7 +106,7 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
 
-    def koin_version= "3.0.1"
+    def koin_version = "3.0.1"
     implementation "io.insert-koin:koin-android:$koin_version"
     testImplementation "io.insert-koin:koin-test-junit4:$koin_version"
 }
