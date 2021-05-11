@@ -1,21 +1,21 @@
 package br.com.argmax.githubconsumer.ui.gitrepositories.converters
 
-import br.com.argmax.githubconsumer.domain.entities.repository.GitRepositoryDto
+import br.com.argmax.githubconsumer.domain.entities.gitrepository.GitRepository
 import br.com.argmax.githubconsumer.ui.components.repositorycard.dto.GitRepositoryCardDto
 
 object GitRepositoryConverter {
 
-    fun convertDtoListToCardDtoList(gitRepositoryDtoList: List<GitRepositoryDto>): List<GitRepositoryCardDto> {
+    fun convertDtoListToCardDtoList(gitRepositoryList: List<GitRepository>): List<GitRepositoryCardDto> {
         val gitRepositoryCardDtoList = mutableListOf<GitRepositoryCardDto>()
 
-        gitRepositoryDtoList.forEach { gitRepositoryDto ->
+        gitRepositoryList.forEach { gitRepositoryDto ->
             gitRepositoryCardDtoList.add(
                 GitRepositoryCardDto(
                     gitRepositoryName = gitRepositoryDto.name,
                     gitRepositoryDescription = gitRepositoryDto.description,
-                    forkQuantity = gitRepositoryDto.forks_count.toString(),
-                    starsQuantity = gitRepositoryDto.stargazers_count.toString(),
-                    userImageUrl = gitRepositoryDto.owner.avatar_url,
+                    forkQuantity = gitRepositoryDto.forksCount.toString(),
+                    starsQuantity = gitRepositoryDto.stargazersCount.toString(),
+                    userImageUrl = gitRepositoryDto.owner.avatarUrl,
                     userName = gitRepositoryDto.owner.login
                 )
             )

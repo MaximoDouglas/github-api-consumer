@@ -2,7 +2,7 @@ package br.com.argmax.githubconsumer.viewmodels.gitpullrequest.context
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import br.com.argmax.githubconsumer.domain.entities.pullrequest.GitPullRequestDto
+import br.com.argmax.githubconsumer.domain.entities.gitpullrequest.GitPullRequest
 import br.com.argmax.githubconsumer.viewmodels.utils.faker.GitPullRequestDtoFaker
 import br.com.argmax.githubconsumer.service.gitpullrequest.GitPullRequestRemoteDataSource
 import br.com.argmax.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel
@@ -34,7 +34,7 @@ open class SelectGitPullRequestViewModelTest {
 
     private lateinit var mSelectPullRequestViewModel: SelectGitPullRequestViewModel
 
-    private var mGitPullRequestDtoList = listOf<GitPullRequestDto>()
+    private var mGitPullRequestDtoList = listOf<GitPullRequest>()
 
     companion object {
 

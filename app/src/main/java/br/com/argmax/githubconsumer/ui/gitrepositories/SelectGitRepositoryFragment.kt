@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.SelectGitRepositoryFragmentBinding
-import br.com.argmax.githubconsumer.domain.entities.repository.GitRepositoryDto
+import br.com.argmax.githubconsumer.domain.entities.gitrepository.GitRepository
 import br.com.argmax.githubconsumer.ui.components.repositorycard.dto.GitRepositoryCardDto
 import br.com.argmax.githubconsumer.ui.gitrepositories.SelectGitRepositoryFragmentDirections.actionSelectRepositoryFragmentToSelectGitPullRequestFragment
 import br.com.argmax.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
@@ -108,7 +108,7 @@ class SelectGitRepositoryFragment : Fragment(), OnGitRepositoryClickListener {
         }
     }
 
-    private fun onSuccess(data: List<GitRepositoryDto>) {
+    private fun onSuccess(data: List<GitRepository>) {
         val gitRepositoryDtoList = convertDtoListToCardDtoList(data)
 
         if (gitRepositoryCardDtoList != null) {

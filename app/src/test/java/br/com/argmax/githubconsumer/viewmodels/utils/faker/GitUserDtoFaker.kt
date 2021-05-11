@@ -1,42 +1,42 @@
 package br.com.argmax.githubconsumer.viewmodels.utils.faker
 
-import br.com.argmax.githubconsumer.domain.entities.user.GitUserDto
+import br.com.argmax.githubconsumer.domain.entities.user.GitUser
 
 object GitUserDtoFaker {
 
-    private val gitUserDto1 = GitUserDto(
+    private val gitUserDto1 = GitUser(
         login = "CyC2018",
-        avatar_url = "https://avatars3.githubusercontent.com/u/36260787?v=4"
+        avatarUrl = "https://avatars3.githubusercontent.com/u/36260787?v=4"
     )
 
-    private val gitUserDto2 = GitUserDto(
+    private val gitUserDto2 = GitUser(
         login = "alibaba",
-        avatar_url = "https://avatars1.githubusercontent.com/u/1961952?v=4"
+        avatarUrl = "https://avatars1.githubusercontent.com/u/1961952?v=4"
     )
 
-    private val gitUserDto3 = GitUserDto(
+    private val gitUserDto3 = GitUser(
         login = "TC-zerol",
-        avatar_url = "https://avatars3.githubusercontent.com/u/14823155?v=4"
+        avatarUrl = "https://avatars3.githubusercontent.com/u/14823155?v=4"
     )
 
-    private val gitUserDto4 = GitUserDto(
+    private val gitUserDto4 = GitUser(
         login = "ZR-Huang",
-        avatar_url = "https://avatars2.githubusercontent.com/u/25542987?v=4"
+        avatarUrl = "https://avatars2.githubusercontent.com/u/25542987?v=4"
     )
 
-    fun getGitUserDto1(): GitUserDto {
+    fun getGitUserDto1(): GitUser {
         return gitUserDto1
     }
 
-    fun getGitUserDto2(): GitUserDto {
+    fun getGitUserDto2(): GitUser {
         return gitUserDto2
     }
 
-    fun getGitUserDto3(): GitUserDto {
+    fun getGitUserDto3(): GitUser {
         return gitUserDto3
     }
 
-    fun getGitUserDto4(): GitUserDto {
+    fun getGitUserDto4(): GitUser {
         return gitUserDto4
     }
 

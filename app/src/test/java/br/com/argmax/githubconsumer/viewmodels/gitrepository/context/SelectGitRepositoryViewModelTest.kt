@@ -2,7 +2,7 @@ package br.com.argmax.githubconsumer.viewmodels.gitrepository.context
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import br.com.argmax.githubconsumer.domain.entities.repository.GitRepositoryDto
+import br.com.argmax.githubconsumer.domain.entities.gitrepository.GitRepository
 import br.com.argmax.githubconsumer.service.gitrepository.GitRepositoryRemoteDataSource
 import br.com.argmax.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel
 import br.com.argmax.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
@@ -34,7 +34,7 @@ open class SelectGitRepositoryViewModelTest {
 
     private lateinit var mSelectRepositoryViewModel: SelectGitRepositoryViewModel
 
-    private var mGitRepositoryDtoList = listOf<GitRepositoryDto>()
+    private var mGitRepositoryDtoList = listOf<GitRepository>()
 
     companion object {
 

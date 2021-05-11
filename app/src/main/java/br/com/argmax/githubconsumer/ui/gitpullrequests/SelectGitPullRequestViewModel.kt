@@ -1,7 +1,7 @@
 package br.com.argmax.githubconsumer.ui.gitpullrequests
 
 import androidx.lifecycle.*
-import br.com.argmax.githubconsumer.domain.entities.pullrequest.GitPullRequestDto
+import br.com.argmax.githubconsumer.domain.entities.gitpullrequest.GitPullRequest
 import br.com.argmax.githubconsumer.service.gitpullrequest.GitPullRequestRemoteDataSource
 import br.com.argmax.githubconsumer.utils.CoroutineContextProvider
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -41,7 +41,7 @@ class SelectGitPullRequestViewModel(
 
         object Loading : SelectGitPullRequestViewModelState()
         data class Error(val throwable: Throwable) : SelectGitPullRequestViewModelState()
-        data class Success(val data: List<GitPullRequestDto>) : SelectGitPullRequestViewModelState()
+        data class Success(val data: List<GitPullRequest>) : SelectGitPullRequestViewModelState()
 
     }
 

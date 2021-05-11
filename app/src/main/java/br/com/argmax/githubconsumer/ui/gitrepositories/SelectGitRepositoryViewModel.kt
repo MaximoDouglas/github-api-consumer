@@ -1,7 +1,7 @@
 package br.com.argmax.githubconsumer.ui.gitrepositories
 
 import androidx.lifecycle.*
-import br.com.argmax.githubconsumer.domain.entities.repository.GitRepositoryDto
+import br.com.argmax.githubconsumer.domain.entities.gitrepository.GitRepository
 import br.com.argmax.githubconsumer.service.gitrepository.GitRepositoryRemoteDataSource
 import br.com.argmax.githubconsumer.utils.CoroutineContextProvider
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -37,7 +37,7 @@ class SelectGitRepositoryViewModel(
 
         object Loading : SelectGitRepositoryViewModelState()
         data class Error(val throwable: Throwable) : SelectGitRepositoryViewModelState()
-        data class Success(val data: List<GitRepositoryDto>) : SelectGitRepositoryViewModelState()
+        data class Success(val data: List<GitRepository>) : SelectGitRepositoryViewModelState()
 
     }
 

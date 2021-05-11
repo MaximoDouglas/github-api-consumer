@@ -1,6 +1,6 @@
 package br.com.argmax.githubconsumer.service.gitpullrequest
 
-import br.com.argmax.githubconsumer.domain.entities.pullrequest.GitPullRequestDto
+import br.com.argmax.githubconsumer.domain.entities.gitpullrequest.GitPullRequest
 
 interface GitPullRequestRemoteDataSource {
 
@@ -8,6 +8,6 @@ interface GitPullRequestRemoteDataSource {
         owner: String,
         repository: String,
         page: Int? = 1
-    ): List<GitPullRequestDto>
+    ): List<GitPullRequest>
 
 }

@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.SelectGitPullRequestFragmentBinding
-import br.com.argmax.githubconsumer.domain.entities.pullrequest.GitPullRequestDto
+import br.com.argmax.githubconsumer.domain.entities.gitpullrequest.GitPullRequest
 import br.com.argmax.githubconsumer.ui.components.pullrequestcard.dtos.GitPullRequestCardDto
 import br.com.argmax.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
 import br.com.argmax.githubconsumer.ui.gitpullrequests.adapters.SelectGitPullRequestAdapter
@@ -156,7 +156,7 @@ class SelectGitPullRequestFragment : Fragment(), OnPullRequestClickListener {
         }
     }
 
-    private fun onSuccess(response: List<GitPullRequestDto>) {
+    private fun onSuccess(response: List<GitPullRequest>) {
         val gitPullRequestCardDtoListConverterReturn = convertDtoListToCardDtoList(response)
 
         val pullRequestCardDtoList = gitPullRequestCardDtoListConverterReturn.first
