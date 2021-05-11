@@ -7,7 +7,7 @@ import br.com.argmax.githubconsumer.di.serviceModule
 import br.com.argmax.githubconsumer.di.viewModelModule
 import org.koin.core.context.startKoin
 
-class GithubConsumerApp : Application() {
+class GithubApiConsumerApp : Application() {
 
     override fun onCreate() {
         startKoin {

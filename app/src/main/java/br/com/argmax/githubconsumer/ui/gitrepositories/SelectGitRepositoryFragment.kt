@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,11 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.SelectGitRepositoryFragmentBinding
 import br.com.argmax.githubconsumer.domain.entities.gitrepository.GitRepository
-import br.com.argmax.githubconsumer.ui.components.repositorycard.dto.GitRepositoryCardDto
 import br.com.argmax.githubconsumer.ui.gitrepositories.SelectGitRepositoryFragmentDirections.actionSelectRepositoryFragmentToSelectGitPullRequestFragment
 import br.com.argmax.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
 import br.com.argmax.githubconsumer.ui.gitrepositories.adapters.SelectGitRepositoryAdapter
-import br.com.argmax.githubconsumer.ui.gitrepositories.converters.GitRepositoryConverter.convertDtoListToCardDtoList
 import br.com.argmax.githubconsumer.ui.gitrepositories.listeners.OnGitRepositoryClickListener
 import br.com.argmax.githubconsumer.utils.EndlessRecyclerOnScrollListener
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -29,7 +26,7 @@ class SelectGitRepositoryFragment : Fragment(), OnGitRepositoryClickListener {
 
     private var mBinding: SelectGitRepositoryFragmentBinding? = null
     private var mAdapter = SelectGitRepositoryAdapter(this)
-    private var gitRepositoryCardDtoList: MutableList<GitRepositoryCardDto>? = null
+    private var gitRepositoryList: MutableList<GitRepository>? = null
 
     private var mApiRequestPage: Int = 1
 
@@ -76,12 +73,11 @@ class SelectGitRepositoryFragment : Fragment(), OnGitRepositoryClickListener {
 
     private fun setupViewModel() {
         mViewModel.getStateLiveData().observe(
-            viewLifecycleOwner,
-            Observer { viewModelState ->
+            viewLifecycleOwner, { viewModelState ->
                 handleViewModelState(viewModelState)
             })
 
-        if (gitRepositoryCardDtoList == null) {
+        if (gitRepositoryList == null) {
             loadData()
         }
     }
@@ -109,15 +105,13 @@ class SelectGitRepositoryFragment : Fragment(), OnGitRepositoryClickListener {
     }
 
     private fun onSuccess(data: List<GitRepository>) {
-        val gitRepositoryDtoList = convertDtoListToCardDtoList(data)
-
-        if (gitRepositoryCardDtoList != null) {
-            gitRepositoryCardDtoList?.addAll(gitRepositoryDtoList)
+        if (gitRepositoryList != null) {
+            gitRepositoryList?.addAll(data)
         } else {
-            gitRepositoryCardDtoList = gitRepositoryDtoList.toMutableList()
+            gitRepositoryList = data.toMutableList()
         }
 
-        mAdapter.replaceData(gitRepositoryCardDtoList)
+        mAdapter.replaceData(gitRepositoryList)
     }
 
     private fun loadData() {

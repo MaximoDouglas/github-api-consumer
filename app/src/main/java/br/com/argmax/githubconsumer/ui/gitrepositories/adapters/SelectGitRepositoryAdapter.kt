@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.GitRepositoryCardViewHolderBinding
-import br.com.argmax.githubconsumer.ui.components.repositorycard.dto.GitRepositoryCardDto
+import br.com.argmax.githubconsumer.domain.entities.gitrepository.GitRepository
+
 import br.com.argmax.githubconsumer.ui.gitrepositories.listeners.OnGitRepositoryClickListener
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.git_repository_card_view_holder.*
@@ -17,7 +18,7 @@ class SelectGitRepositoryAdapter(
     val onGitRepositoryClickListener: OnGitRepositoryClickListener
 ) : Adapter<SelectGitRepositoryAdapter.GitRepositoryCardViewHolder>() {
 
-    private var mData = listOf<GitRepositoryCardDto>()
+    private var mData = listOf<GitRepository>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -42,7 +43,7 @@ class SelectGitRepositoryAdapter(
         return mData.size
     }
 
-    fun replaceData(list: List<GitRepositoryCardDto>?) {
+    fun replaceData(list: List<GitRepository>?) {
         list?.let {
             mData = it
         }
@@ -60,17 +61,17 @@ class SelectGitRepositoryAdapter(
             gitRepositoryCard.setOnClickListener(this)
         }
 
-        fun updateData(repositoryCardDto: GitRepositoryCardDto) {
-            gitRepositoryCard.setRepositoryCardDto(repositoryCardDto)
+        fun updateData(repositoryCard: GitRepository) {
+            gitRepositoryCard.setRepositoryCard(repositoryCard)
         }
 
         override fun onClick(view: View?) {
-            val repositoryCardDtoAdapterPosition = this.adapterPosition
-            val repositoryCardDto = mData[repositoryCardDtoAdapterPosition]
+            val gitRepositoryAdapterPosition = this.adapterPosition
+            val gitRepository = mData[gitRepositoryAdapterPosition]
 
             onGitRepositoryClickListener.onClick(
-                repositoryCardDto.userName,
-                repositoryCardDto.gitRepositoryName
+                gitRepository.owner.login,
+                gitRepository.name
             )
         }
     }

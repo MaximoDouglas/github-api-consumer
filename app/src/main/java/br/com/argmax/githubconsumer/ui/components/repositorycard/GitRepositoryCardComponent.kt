@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.GitRepositoryCardComponentBinding
-import br.com.argmax.githubconsumer.ui.components.repositorycard.dto.GitRepositoryCardDto
+import br.com.argmax.githubconsumer.domain.entities.gitrepository.GitRepository
 
 class GitRepositoryCardComponent @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyle: Int = 0
@@ -21,10 +21,10 @@ class GitRepositoryCardComponent @JvmOverloads constructor(
             true
         )
 
-    fun setRepositoryCardDto(
-        gitRepositoryCardDto: GitRepositoryCardDto
+    fun setRepositoryCard(
+        gitRepository: GitRepository
     ) {
-        mBinding?.gitRepositoryCardDto = gitRepositoryCardDto
+        mBinding?.gitRepository = gitRepository
         mBinding?.executePendingBindings()
     }
 

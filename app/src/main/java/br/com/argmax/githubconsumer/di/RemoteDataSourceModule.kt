@@ -6,6 +6,7 @@ import br.com.argmax.githubconsumer.service.gitrepository.GitRepositoryRemoteDat
 import br.com.argmax.githubconsumer.service.gitrepository.GitRepositoryRemoteDataSourceImpl
 import org.koin.dsl.module
 
+@Suppress("USELESS_CAST")
 val remoteDataSourceModule = module {
     single { GitRepositoryRemoteDataSourceImpl(get()) as GitRepositoryRemoteDataSource }
     single { GitPullRequestRemoteDataSourceImpl(get()) as GitPullRequestRemoteDataSource }

@@ -3,8 +3,9 @@ package br.com.argmax.githubconsumer.components.gitrepositorycard.context
 import android.app.Activity
 import android.view.View
 import br.com.argmax.githubconsumer.components.utils.BaseComponentTest
+import br.com.argmax.githubconsumer.domain.entities.gitrepository.GitRepository
+import br.com.argmax.githubconsumer.domain.entities.user.GitUser
 import br.com.argmax.githubconsumer.ui.components.repositorycard.GitRepositoryCardComponent
-import br.com.argmax.githubconsumer.ui.components.repositorycard.dto.GitRepositoryCardDto
 import br.com.argmax.githubconsumer.utils.StringUtils.compactStringWithDots
 import kotlinx.android.synthetic.main.git_repository_card_component.view.*
 import org.junit.Assert.assertEquals
@@ -21,9 +22,9 @@ open class GitRepositoryCardTest : BaseComponentTest() {
                 "printing and typesetting industry. Lorem Ipsum has been the industry's standard " +
                 "dummy text ever since the 1500s, when an unknown printer took a galley"
 
-        private const val FORKS_QUANTITY = 640.toString()
+        private const val FORKS_QUANTITY = 640
 
-        private const val STARS_QUANTITY = 98.toString()
+        private const val STARS_QUANTITY = 98
 
         private const val USER_IMAGE_URL = "https://picsum.photos/200"
 
@@ -39,29 +40,33 @@ open class GitRepositoryCardTest : BaseComponentTest() {
     }
 
     fun `when repository card has all data`() {
-        val repositoryCardDto = GitRepositoryCardDto(
-            gitRepositoryName = REPOSITORY_NAME,
-            gitRepositoryDescription = LONG_REPOSITORY_DESCRIPTION,
-            forkQuantity = FORKS_QUANTITY,
-            starsQuantity = STARS_QUANTITY,
-            userImageUrl = USER_IMAGE_URL,
-            userName = USER_NAME
+        val repositoryCardDto = GitRepository(
+            name = REPOSITORY_NAME,
+            description = LONG_REPOSITORY_DESCRIPTION,
+            forksCount = FORKS_QUANTITY,
+            stargazersCount = STARS_QUANTITY,
+            owner = GitUser(
+                login = USER_NAME,
+                avatarUrl = USER_IMAGE_URL
+            )
         )
 
-        mGitRepositoryCardComponent?.setRepositoryCardDto(repositoryCardDto)
+        mGitRepositoryCardComponent?.setRepositoryCard(repositoryCardDto)
     }
 
     fun `when repository card has no description`() {
-        val repositoryCardDto = GitRepositoryCardDto(
-            gitRepositoryName = REPOSITORY_NAME,
-            gitRepositoryDescription = null,
-            forkQuantity = FORKS_QUANTITY,
-            starsQuantity = STARS_QUANTITY,
-            userImageUrl = USER_IMAGE_URL,
-            userName = USER_NAME
+        val repositoryCardDto = GitRepository(
+            name = REPOSITORY_NAME,
+            description = null,
+            forksCount = FORKS_QUANTITY,
+            stargazersCount = STARS_QUANTITY,
+            owner = GitUser(
+                login = USER_NAME,
+                avatarUrl = USER_IMAGE_URL
+            )
         )
 
-        mGitRepositoryCardComponent?.setRepositoryCardDto(repositoryCardDto)
+        mGitRepositoryCardComponent?.setRepositoryCard(repositoryCardDto)
     }
 
     fun `assert that repository name is visible`() {
@@ -105,8 +110,10 @@ open class GitRepositoryCardTest : BaseComponentTest() {
     }
 
     fun `assert that repository stars quantity label is set correctly`() {
+        val starsQuantityString = STARS_QUANTITY.toString()
+
         assertEquals(
-            STARS_QUANTITY,
+            starsQuantityString,
             mGitRepositoryCardComponent?.git_repository_card_git_repository_stars_text_view?.text.toString()
         )
     }
@@ -116,8 +123,10 @@ open class GitRepositoryCardTest : BaseComponentTest() {
     }
 
     fun `assert that repository forks quantity label is set correctly`() {
+        val forksQuantityString = FORKS_QUANTITY.toString()
+
         assertEquals(
-            FORKS_QUANTITY,
+            forksQuantityString,
             mGitRepositoryCardComponent?.git_repository_card_git_repository_forks_text_view?.text.toString()
         )
     }

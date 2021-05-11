@@ -1,6 +1,7 @@
 package br.com.argmax.githubconsumer.domain.entities.gitrepository
 
 import br.com.argmax.githubconsumer.domain.entities.user.GitUser
+import br.com.argmax.githubconsumer.utils.StringUtils.compactStringWithDots
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
@@ -15,4 +16,10 @@ data class GitRepository(
     val stargazersCount: Int,
     @SerializedName("owner")
     val owner: GitUser
-) : Serializable
+) : Serializable {
+
+    fun gitRepositoryShortDescription(): String? {
+        return compactStringWithDots(description, 60)
+    }
+
+}
