@@ -4,7 +4,7 @@ import br.com.argmax.githubconsumer.domain.entities.gitpullrequest.GitPullReques
 
 interface GitPullRequestRemoteDataSource {
 
-    suspend fun getGitPullRequestDtoList(
+    suspend fun getGitPullRequestList(
         owner: String,
         repository: String,
         page: Int? = 1

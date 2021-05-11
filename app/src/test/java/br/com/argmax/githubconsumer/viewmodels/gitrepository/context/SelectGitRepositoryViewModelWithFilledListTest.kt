@@ -9,7 +9,7 @@ class SelectGitRepositoryViewModelWithFilledListTest : SelectGitRepositoryViewMo
 
     @Before
     fun `setup scenario`() {
-        `when data source returns filled GitRepositoryDto list`()
+        `when data source returns filled GitRepository list`()
     }
 
     @Test

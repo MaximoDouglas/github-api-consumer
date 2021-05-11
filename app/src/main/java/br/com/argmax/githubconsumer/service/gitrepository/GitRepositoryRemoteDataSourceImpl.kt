@@ -4,7 +4,7 @@ class GitRepositoryRemoteDataSourceImpl(
     private val mGitRepositoryApiDataSource: GitRepositoryApiDataSource
 ) : GitRepositoryRemoteDataSource {
 
-    override suspend fun getGitRepositoryDtoList(page: Int) =
+    override suspend fun getGitRepositoryList(page: Int) =
         mGitRepositoryApiDataSource.getGitRepositoryApiResponse(page = page).items
 
 }

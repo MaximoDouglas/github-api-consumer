@@ -9,7 +9,7 @@ class SelectGitPullRequestViewModelWithFilledListTest : SelectGitPullRequestView
 
     @Before
     fun `setup scenario`() {
-        `when data source returns filled GitPullRequestDto list`()
+        `when data source returns filled GitPullRequest list`()
     }
 
     @Test

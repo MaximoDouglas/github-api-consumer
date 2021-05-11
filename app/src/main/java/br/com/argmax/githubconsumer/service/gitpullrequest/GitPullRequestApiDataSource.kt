@@ -8,7 +8,7 @@ import retrofit2.http.Query
 interface GitPullRequestApiDataSource {
 
     @GET("repos/{owner}/{repository}/pulls")
-    suspend fun getGitPullRequestDtoList(
+    suspend fun getGitPullRequestList(
         @Path("owner") owner: String,
         @Path("repository") repository: String,
         @Query("page") page: Int? = 1,

@@ -9,7 +9,7 @@ class SelectGitRepositoryViewModelWithEmptyListTest : SelectGitRepositoryViewMod
 
     @Before
     fun `setup scenario`() {
-        `when data source returns an empty GitRepositoryDto list`()
+        `when data source returns an empty GitRepository list`()
     }
 
     @Test

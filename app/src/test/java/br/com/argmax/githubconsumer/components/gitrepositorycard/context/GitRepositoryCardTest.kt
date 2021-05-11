@@ -40,7 +40,7 @@ open class GitRepositoryCardTest : BaseComponentTest() {
     }
 
     fun `when repository card has all data`() {
-        val repositoryCardDto = GitRepository(
+        val gitRepository = GitRepository(
             name = REPOSITORY_NAME,
             description = LONG_REPOSITORY_DESCRIPTION,
             forksCount = FORKS_QUANTITY,
@@ -51,11 +51,11 @@ open class GitRepositoryCardTest : BaseComponentTest() {
             )
         )
 
-        mGitRepositoryCardComponent?.setRepositoryCard(repositoryCardDto)
+        mGitRepositoryCardComponent?.setRepositoryCard(gitRepository)
     }
 
     fun `when repository card has no description`() {
-        val repositoryCardDto = GitRepository(
+        val gitRepository = GitRepository(
             name = REPOSITORY_NAME,
             description = null,
             forksCount = FORKS_QUANTITY,
@@ -66,7 +66,7 @@ open class GitRepositoryCardTest : BaseComponentTest() {
             )
         )
 
-        mGitRepositoryCardComponent?.setRepositoryCard(repositoryCardDto)
+        mGitRepositoryCardComponent?.setRepositoryCard(gitRepository)
     }
 
     fun `assert that repository name is visible`() {

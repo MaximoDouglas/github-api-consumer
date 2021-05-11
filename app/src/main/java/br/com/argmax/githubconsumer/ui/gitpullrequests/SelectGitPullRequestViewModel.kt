@@ -22,11 +22,11 @@ class SelectGitPullRequestViewModel(
         stateLiveData.value = SelectGitPullRequestViewModelState.Error(exception)
     }
 
-    fun getGitPullRequestDtoList(owner: String, repository: String, page: Int) {
+    fun getGitPullRequestList(owner: String, repository: String, page: Int) {
         stateLiveData.value = SelectGitPullRequestViewModelState.Loading
         viewModelScope.launch(handler) {
             val data = withContext(contextProvider.IO) {
-                gitPullRequestRemoteDataSource.getGitPullRequestDtoList(
+                gitPullRequestRemoteDataSource.getGitPullRequestList(
                     owner = owner,
                     repository = repository,
                     page = page

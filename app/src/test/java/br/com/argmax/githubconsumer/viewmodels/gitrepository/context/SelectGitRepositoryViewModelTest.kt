@@ -8,7 +8,7 @@ import br.com.argmax.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewMo
 import br.com.argmax.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
 import br.com.argmax.githubconsumer.viewmodels.utils.TestContextProvider
 import br.com.argmax.githubconsumer.viewmodels.utils.TestCoroutineRule
-import br.com.argmax.githubconsumer.viewmodels.utils.faker.GitRepositoryDtoFaker
+import br.com.argmax.githubconsumer.viewmodels.utils.faker.GitRepositoryFaker
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
@@ -34,7 +34,7 @@ open class SelectGitRepositoryViewModelTest {
 
     private lateinit var mSelectRepositoryViewModel: SelectGitRepositoryViewModel
 
-    private var mGitRepositoryDtoList = listOf<GitRepository>()
+    private var mGitRepositoryList = listOf<GitRepository>()
 
     companion object {
 
@@ -54,18 +54,18 @@ open class SelectGitRepositoryViewModelTest {
         }
     }
 
-    fun `when data source returns an empty GitRepositoryDto list`() {
-        mGitRepositoryDtoList = listOf()
+    fun `when data source returns an empty GitRepository list`() {
+        mGitRepositoryList = listOf()
     }
 
-    fun `when data source returns filled GitRepositoryDto list`() {
-        mGitRepositoryDtoList = GitRepositoryDtoFaker.getList()
+    fun `when data source returns filled GitRepository list`() {
+        mGitRepositoryList = GitRepositoryFaker.getList()
     }
 
     fun `should success when data source returns the expected data`() =
         testCoroutineRule.runBlockingTest {
-            `when`(mGitRepositoryRemoteDataSource.getGitRepositoryDtoList(REQUEST_PAGE)).thenReturn(
-                mGitRepositoryDtoList
+            `when`(mGitRepositoryRemoteDataSource.getGitRepositoryList(REQUEST_PAGE)).thenReturn(
+                mGitRepositoryList
             )
 
             mSelectRepositoryViewModel.getGitRepositoryApiResponse(REQUEST_PAGE)
@@ -73,7 +73,7 @@ open class SelectGitRepositoryViewModelTest {
             verify(mViewStateObserver).onChanged(SelectGitRepositoryViewModelState.Loading)
             verify(mViewStateObserver).onChanged(
                 SelectGitRepositoryViewModelState.Success(
-                    mGitRepositoryDtoList
+                    mGitRepositoryList
                 )
             )
         }
@@ -81,7 +81,7 @@ open class SelectGitRepositoryViewModelTest {
     fun `should throw error when data source throws exception`() =
         testCoroutineRule.runBlockingTest {
             val error = Error()
-            `when`(mGitRepositoryRemoteDataSource.getGitRepositoryDtoList(REQUEST_PAGE)).thenThrow(
+            `when`(mGitRepositoryRemoteDataSource.getGitRepositoryList(REQUEST_PAGE)).thenThrow(
                 error
             )
 

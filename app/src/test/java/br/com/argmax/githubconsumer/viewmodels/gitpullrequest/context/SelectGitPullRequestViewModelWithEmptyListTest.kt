@@ -9,7 +9,7 @@ class SelectGitPullRequestViewModelWithEmptyListTest : SelectGitPullRequestViewM
 
     @Before
     fun `setup scenario`() {
-        `when data source returns an empty GitPullRequestDto list`()
+        `when data source returns an empty GitPullRequest list`()
     }
 
     @Test

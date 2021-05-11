@@ -16,10 +16,9 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.SelectGitPullRequestFragmentBinding
 import br.com.argmax.githubconsumer.domain.entities.gitpullrequest.GitPullRequest
-import br.com.argmax.githubconsumer.ui.components.pullrequestcard.dtos.GitPullRequestCardDto
+import br.com.argmax.githubconsumer.domain.entities.gitpullrequest.PullRequestStateEnum
 import br.com.argmax.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
 import br.com.argmax.githubconsumer.ui.gitpullrequests.adapters.SelectGitPullRequestAdapter
-import br.com.argmax.githubconsumer.ui.gitpullrequests.converters.GitPullRequestConverter.convertDtoListToCardDtoList
 import br.com.argmax.githubconsumer.ui.gitpullrequests.listeners.OnPullRequestClickListener
 import br.com.argmax.githubconsumer.utils.EndlessRecyclerOnScrollListener
 import br.com.argmax.githubconsumer.utils.FragmentUtils.bundleContainsKeys
@@ -38,7 +37,7 @@ class SelectGitPullRequestFragment : Fragment(), OnPullRequestClickListener {
 
     private var mOwnerLogin: String? = null
     private var mRepositoryName: String? = null
-    private var gitPullRequestCardDtoList: MutableList<GitPullRequestCardDto>? = null
+    private var gitPullRequestList: MutableList<GitPullRequest>? = null
     private var mApiRequestPage: Int = 1
 
     private var mOpenPullRequestCounter: Int = 0
@@ -113,7 +112,7 @@ class SelectGitPullRequestFragment : Fragment(), OnPullRequestClickListener {
     private fun loadData() {
         mOwnerLogin?.let { owner ->
             mRepositoryName?.let { repository ->
-                mViewModel.getGitPullRequestDtoList(
+                mViewModel.getGitPullRequestList(
                     owner,
                     repository,
                     mApiRequestPage
@@ -129,7 +128,7 @@ class SelectGitPullRequestFragment : Fragment(), OnPullRequestClickListener {
                 handleViewModelState(viewModelState)
             })
 
-        if (gitPullRequestCardDtoList == null) {
+        if (gitPullRequestList == null) {
             loadData()
         }
     }
@@ -157,22 +156,31 @@ class SelectGitPullRequestFragment : Fragment(), OnPullRequestClickListener {
     }
 
     private fun onSuccess(response: List<GitPullRequest>) {
-        val gitPullRequestCardDtoListConverterReturn = convertDtoListToCardDtoList(response)
+        val openPullRequestQuantity = getOpenPullRequestQuantity(response)
 
-        val pullRequestCardDtoList = gitPullRequestCardDtoListConverterReturn.first
-        val pullRequestStatePair = gitPullRequestCardDtoListConverterReturn.second
+        mOpenPullRequestCounter += openPullRequestQuantity
+        mClosedPullRequestCounter += response.size - mOpenPullRequestCounter
 
-        mOpenPullRequestCounter += pullRequestStatePair.first
-        mClosedPullRequestCounter += pullRequestStatePair.second
-
-        if (gitPullRequestCardDtoList != null) {
-            gitPullRequestCardDtoList?.addAll(pullRequestCardDtoList)
+        if (gitPullRequestList != null) {
+            gitPullRequestList?.addAll(response)
         } else {
-            gitPullRequestCardDtoList = pullRequestCardDtoList.toMutableList()
+            gitPullRequestList = response.toMutableList()
         }
 
-        mAdapter.replaceData(gitPullRequestCardDtoList)
+        mAdapter.replaceData(gitPullRequestList)
         updateStateCounter()
+    }
+
+    private fun getOpenPullRequestQuantity(gitPullRequestList: List<GitPullRequest>): Int {
+        var openPullRequestQuantity = 0
+
+        gitPullRequestList.forEach { gitPullRequest ->
+            if (gitPullRequest.state == PullRequestStateEnum.OPEN.value) {
+                openPullRequestQuantity++
+            }
+        }
+
+        return openPullRequestQuantity
     }
 
     private fun updateStateCounter() {

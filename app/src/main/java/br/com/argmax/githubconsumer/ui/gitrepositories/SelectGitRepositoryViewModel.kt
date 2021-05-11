@@ -26,7 +26,7 @@ class SelectGitRepositoryViewModel(
         stateLiveData.value = SelectGitRepositoryViewModelState.Loading
         viewModelScope.launch(handler) {
             val data = withContext(contextProvider.IO) {
-                gitRepositoryRemoteDataSource.getGitRepositoryDtoList(page)
+                gitRepositoryRemoteDataSource.getGitRepositoryList(page)
             }
 
             stateLiveData.value = SelectGitRepositoryViewModelState.Success(data)

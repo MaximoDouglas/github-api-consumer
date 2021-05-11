@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.GitPullRequestCardComponentBinding
-import br.com.argmax.githubconsumer.ui.components.pullrequestcard.dtos.GitPullRequestCardDto
+import br.com.argmax.githubconsumer.domain.entities.gitpullrequest.GitPullRequest
 
 class GitPullRequestCardComponent @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyle: Int = 0
@@ -21,10 +21,10 @@ class GitPullRequestCardComponent @JvmOverloads constructor(
             true
         )
 
-    fun setPullRequestCardDto(
-        gitPullRequestCardDto: GitPullRequestCardDto
+    fun setGitPullRequest(
+        gitPullRequest: GitPullRequest
     ) {
-        mBinding?.gitPullRequestCardDto = gitPullRequestCardDto
+        mBinding?.gitPullRequest = gitPullRequest
         mBinding?.executePendingBindings()
     }
 

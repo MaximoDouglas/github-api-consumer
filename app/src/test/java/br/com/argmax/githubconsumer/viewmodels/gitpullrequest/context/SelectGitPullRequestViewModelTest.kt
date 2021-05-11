@@ -3,7 +3,7 @@ package br.com.argmax.githubconsumer.viewmodels.gitpullrequest.context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import br.com.argmax.githubconsumer.domain.entities.gitpullrequest.GitPullRequest
-import br.com.argmax.githubconsumer.viewmodels.utils.faker.GitPullRequestDtoFaker
+import br.com.argmax.githubconsumer.viewmodels.utils.faker.GitPullRequestFaker
 import br.com.argmax.githubconsumer.service.gitpullrequest.GitPullRequestRemoteDataSource
 import br.com.argmax.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel
 import br.com.argmax.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
@@ -34,7 +34,7 @@ open class SelectGitPullRequestViewModelTest {
 
     private lateinit var mSelectPullRequestViewModel: SelectGitPullRequestViewModel
 
-    private var mGitPullRequestDtoList = listOf<GitPullRequest>()
+    private var mGitPullRequestList = listOf<GitPullRequest>()
 
     companion object {
 
@@ -58,27 +58,27 @@ open class SelectGitPullRequestViewModelTest {
         }
     }
 
-    fun `when data source returns an empty GitPullRequestDto list`() {
-        mGitPullRequestDtoList = listOf()
+    fun `when data source returns an empty GitPullRequest list`() {
+        mGitPullRequestList = listOf()
     }
 
-    fun `when data source returns filled GitPullRequestDto list`() {
-        mGitPullRequestDtoList = GitPullRequestDtoFaker.getList()
+    fun `when data source returns filled GitPullRequest list`() {
+        mGitPullRequestList = GitPullRequestFaker.getList()
     }
 
     fun `should success when data source returns the expected data`() =
         testCoroutineRule.runBlockingTest {
             `when`(
-                mGitPullRequestRemoteDataSource.getGitPullRequestDtoList(
+                mGitPullRequestRemoteDataSource.getGitPullRequestList(
                     repository = FAKE_REPOSITORY_NAME,
                     owner = FAKE_USER_LOGIN,
                     page = FAKE_REQUEST_PAGE
                 )
             ).thenReturn(
-                mGitPullRequestDtoList
+                mGitPullRequestList
             )
 
-            mSelectPullRequestViewModel.getGitPullRequestDtoList(
+            mSelectPullRequestViewModel.getGitPullRequestList(
                 repository = FAKE_REPOSITORY_NAME,
                 owner = FAKE_USER_LOGIN,
                 page = FAKE_REQUEST_PAGE
@@ -87,7 +87,7 @@ open class SelectGitPullRequestViewModelTest {
             verify(mViewStateObserver).onChanged(SelectGitPullRequestViewModelState.Loading)
             verify(mViewStateObserver).onChanged(
                 SelectGitPullRequestViewModelState.Success(
-                    mGitPullRequestDtoList
+                    mGitPullRequestList
                 )
             )
         }
@@ -96,7 +96,7 @@ open class SelectGitPullRequestViewModelTest {
         testCoroutineRule.runBlockingTest {
             val error = Error()
             `when`(
-                mGitPullRequestRemoteDataSource.getGitPullRequestDtoList(
+                mGitPullRequestRemoteDataSource.getGitPullRequestList(
                     repository = FAKE_REPOSITORY_NAME,
                     owner = FAKE_USER_LOGIN,
                     page = FAKE_REQUEST_PAGE
@@ -105,7 +105,7 @@ open class SelectGitPullRequestViewModelTest {
                 error
             )
 
-            mSelectPullRequestViewModel.getGitPullRequestDtoList(
+            mSelectPullRequestViewModel.getGitPullRequestList(
                 repository = FAKE_REPOSITORY_NAME,
                 owner = FAKE_USER_LOGIN,
                 page = FAKE_REQUEST_PAGE

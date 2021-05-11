@@ -3,8 +3,9 @@ package br.com.argmax.githubconsumer.components.gitpullrequestcard.context
 import android.app.Activity
 import android.view.View
 import br.com.argmax.githubconsumer.components.utils.BaseComponentTest
+import br.com.argmax.githubconsumer.domain.entities.gitpullrequest.GitPullRequest
+import br.com.argmax.githubconsumer.domain.entities.user.GitUser
 import br.com.argmax.githubconsumer.ui.components.pullrequestcard.GitPullRequestCardComponent
-import br.com.argmax.githubconsumer.ui.components.pullrequestcard.dtos.GitPullRequestCardDto
 import br.com.argmax.githubconsumer.utils.StringUtils.compactStringWithDots
 import kotlinx.android.synthetic.main.git_pull_request_card_component.view.*
 import org.junit.Assert.assertEquals
@@ -37,27 +38,31 @@ open class GitPullRequestCardTest : BaseComponentTest() {
     }
 
     fun `when pull request card has all data`() {
-        val gitPullRequestCardDto = GitPullRequestCardDto(
-            gitPullRequestTitle = PULL_REQUEST_TITLE,
-            gitPullRequestBody = LONG_PULL_REQUEST_BODY,
-            gitPullRequestUrl = PULL_REQUEST_URL,
-            userImageUrl = USER_IMAGE_URL,
-            userName = USER_NAME
+        val gitPullRequest = GitPullRequest(
+            title = PULL_REQUEST_TITLE,
+            body = LONG_PULL_REQUEST_BODY,
+            htmlUrl = PULL_REQUEST_URL,
+            user = GitUser(
+                login = USER_NAME,
+                avatarUrl = USER_IMAGE_URL
+            )
         )
 
-        mGitPullRequestCardComponent?.setPullRequestCardDto(gitPullRequestCardDto)
+        mGitPullRequestCardComponent?.setGitPullRequest(gitPullRequest)
     }
 
     fun `when pull request card has no body`() {
-        val gitPullRequestCardDto = GitPullRequestCardDto(
-            gitPullRequestTitle = PULL_REQUEST_TITLE,
-            gitPullRequestBody = null,
-            gitPullRequestUrl = PULL_REQUEST_URL,
-            userImageUrl = USER_IMAGE_URL,
-            userName = USER_NAME
+        val gitPullRequest = GitPullRequest(
+            title = PULL_REQUEST_TITLE,
+            body = null,
+            htmlUrl = PULL_REQUEST_URL,
+            user = GitUser(
+                login = USER_NAME,
+                avatarUrl = USER_IMAGE_URL
+            )
         )
 
-        mGitPullRequestCardComponent?.setPullRequestCardDto(gitPullRequestCardDto)
+        mGitPullRequestCardComponent?.setGitPullRequest(gitPullRequest)
     }
 
     fun `assert that pull request title is visible`() {
