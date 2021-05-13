@@ -6,7 +6,7 @@
 
         <variable
             name="gitPullRequest"
-            type="br.com.argmax.githubconsumer.domain.entities.gitpullrequest.GitPullRequest" />
+            type="com.maximo.douglas.githubconsumer.domain.entities.gitpullrequest.GitPullRequest" />
 
     </data>
 
