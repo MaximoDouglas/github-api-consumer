@@ -1,6 +1,5 @@
 package com.maximo.douglas.githubconsumer.components.gitrepositorycard.context
 
-import com.maximo.douglas.githubconsumer.components.gitrepositorycard.context.GitRepositoryCardTest
 import org.junit.Before
 import org.junit.Test
 

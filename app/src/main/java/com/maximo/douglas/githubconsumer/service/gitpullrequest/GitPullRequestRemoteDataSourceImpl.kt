@@ -1,8 +1,5 @@
 package com.maximo.douglas.githubconsumer.service.gitpullrequest
 
-import com.maximo.douglas.githubconsumer.service.gitpullrequest.GitPullRequestApiDataSource
-import com.maximo.douglas.githubconsumer.service.gitpullrequest.GitPullRequestRemoteDataSource
-
 class GitPullRequestRemoteDataSourceImpl(
     private val mGitPullRequestApiDataSource: GitPullRequestApiDataSource
 ) : GitPullRequestRemoteDataSource {

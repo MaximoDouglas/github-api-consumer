@@ -5,8 +5,8 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
-import com.maximo.douglas.githubconsumer.MainActivity
 import br.com.argmax.githubconsumer.R
+import com.maximo.douglas.githubconsumer.MainActivity
 import com.maximo.douglas.githubconsumer.testutils.FileUtils.getJsonFromFile
 import com.maximo.douglas.githubconsumer.testutils.RecyclerViewMatcher.Companion.withRecyclerView
 import com.maximo.douglas.githubconsumer.testutils.StringUtils

@@ -11,8 +11,8 @@ import androidx.test.espresso.intent.matcher.IntentMatchers
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
-import com.maximo.douglas.githubconsumer.MainActivity
 import br.com.argmax.githubconsumer.R
+import com.maximo.douglas.githubconsumer.MainActivity
 import com.maximo.douglas.githubconsumer.testutils.FileUtils
 import com.maximo.douglas.githubconsumer.testutils.RecyclerViewMatcher.Companion.withRecyclerView
 import com.maximo.douglas.githubconsumer.testutils.StringUtils.compactStringWithDots

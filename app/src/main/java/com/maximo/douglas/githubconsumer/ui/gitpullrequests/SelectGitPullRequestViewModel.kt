@@ -1,6 +1,9 @@
 package com.maximo.douglas.githubconsumer.ui.gitpullrequests
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.maximo.douglas.githubconsumer.domain.entities.gitpullrequest.GitPullRequest
 import com.maximo.douglas.githubconsumer.service.gitpullrequest.GitPullRequestRemoteDataSource
 import com.maximo.douglas.githubconsumer.testutils.CoroutineContextProvider

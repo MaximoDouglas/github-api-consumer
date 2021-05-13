@@ -1,6 +1,5 @@
 package com.maximo.douglas.githubconsumer.components.gitpullrequestcard.context
 
-import com.maximo.douglas.githubconsumer.components.gitpullrequestcard.context.GitPullRequestCardTest
 import org.junit.Before
 import org.junit.Test
 

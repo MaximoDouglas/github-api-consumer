@@ -5,8 +5,8 @@ import android.view.View
 import com.maximo.douglas.githubconsumer.components.utils.BaseComponentTest
 import com.maximo.douglas.githubconsumer.domain.entities.gitrepository.GitRepository
 import com.maximo.douglas.githubconsumer.domain.entities.user.GitUser
-import com.maximo.douglas.githubconsumer.ui.components.repositorycard.GitRepositoryCardComponent
 import com.maximo.douglas.githubconsumer.testutils.StringUtils.compactStringWithDots
+import com.maximo.douglas.githubconsumer.ui.components.repositorycard.GitRepositoryCardComponent
 import kotlinx.android.synthetic.main.git_repository_card_component.view.*
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

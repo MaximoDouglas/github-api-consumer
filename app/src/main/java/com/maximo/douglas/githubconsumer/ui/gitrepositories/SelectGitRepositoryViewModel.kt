@@ -1,6 +1,9 @@
 package com.maximo.douglas.githubconsumer.ui.gitrepositories
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.maximo.douglas.githubconsumer.domain.entities.gitrepository.GitRepository
 import com.maximo.douglas.githubconsumer.service.gitrepository.GitRepositoryRemoteDataSource
 import com.maximo.douglas.githubconsumer.testutils.CoroutineContextProvider

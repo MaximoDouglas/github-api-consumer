@@ -1,6 +1,5 @@
 package com.maximo.douglas.githubconsumer.viewmodels.gitpullrequest.context
 
-import com.maximo.douglas.githubconsumer.viewmodels.gitpullrequest.context.SelectGitPullRequestViewModelTest
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Test
