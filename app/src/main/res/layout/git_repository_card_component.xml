@@ -5,8 +5,8 @@
     <data>
 
         <variable
-            name="gitRepositoryCardDto"
-            type="br.com.argmax.githubconsumer.ui.components.repositorycard.dto.GitRepositoryCardDto" />
+            name="gitRepository"
+            type="com.maximo.douglas.domain.entities.gitrepository.GitRepository" />
 
     </data>
 
@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="@{gitRepositoryCardDto.gitRepositoryName}"
+                android:text="@{gitRepository.name}"
                 android:textColor="@color/blueGray600"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -36,13 +36,13 @@
 
             <TextView
                 android:id="@+id/git_repository_card_git_repository_description_text_view"
-                visibleOrGone="@{gitRepositoryCardDto.gitRepositoryDescription != null}"
+                visibleOrGone="@{gitRepository.description != null}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:ellipsize="end"
                 android:maxLength="75"
-                android:text="@{gitRepositoryCardDto.gitRepositoryDescription}"
+                android:text="@{gitRepository.gitRepositoryShortDescription()}"
                 android:textColor="@color/blueGray900"
                 android:textSize="14sp"
                 tools:text="Descrição do respositório Lorem Ipsum is simply dummy text of the printing and" />
@@ -59,7 +59,7 @@
                     android:layout_marginEnd="10dp"
                     android:drawableStart="@drawable/ic_fork"
                     android:drawablePadding="2dp"
-                    android:text="@{gitRepositoryCardDto.forkQuantity}"
+                    android:text="@{String.valueOf(gitRepository.forksCount)}"
                     android:textColor="@color/yellow700"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_star"
                     android:drawablePadding="4dp"
-                    android:text="@{gitRepositoryCardDto.starsQuantity}"
+                    android:text="@{String.valueOf(gitRepository.stargazersCount)}"
                     android:textColor="@color/yellow700"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -90,7 +90,7 @@
 
             <ImageView
                 android:id="@+id/git_repository_card_user_image_image_view"
-                imageUri="@{gitRepositoryCardDto.userImageUrl}"
+                imageUri="@{gitRepository.owner.avatarUrl}"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -101,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@{gitRepositoryCardDto.userName}"
+                android:text="@{gitRepository.owner.login}"
                 android:textColor="@color/blue600"
                 tools:text="username" />
 

@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">github-consumer</string>
+    <string name="app_name">github-api-consumer</string>
     <string name="select_repository_fragment_toolbar_text">Java Popular Repositories</string>
 </resources>
