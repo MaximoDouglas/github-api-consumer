@@ -77,4 +77,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+
+    // KOIN
+    implementation "io.insert-koin:koin-android:3.0.1"
+    testImplementation "io.insert-koin:koin-test-junit4:3.0.1"
 }

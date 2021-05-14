@@ -1,4 +1,4 @@
-package com.maximo.douglas.githubconsumer.utils
+package com.maximo.douglas.githubconsumer.testutils
 
 import android.content.res.Resources
 import android.content.res.Resources.NotFoundException

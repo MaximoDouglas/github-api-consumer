@@ -5,9 +5,9 @@ import androidx.lifecycle.Observer
 import com.maximo.douglas.domain.entities.gitrepository.GitRepository
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
-import com.maximo.douglas.githubconsumer.viewmodels.utils.TestContextProvider
-import com.maximo.douglas.githubconsumer.viewmodels.utils.TestCoroutineRule
-import com.maximo.douglas.githubconsumer.viewmodels.utils.faker.GitRepositoryFaker
+import com.maximo.douglas.githubconsumer.testutils.TestContextProvider
+import com.maximo.douglas.githubconsumer.testutils.TestCoroutineRule
+import com.maximo.douglas.githubconsumer.testutils.faker.GitRepositoryFaker
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule

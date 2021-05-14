@@ -1,8 +1,8 @@
-package com.maximo.douglas.githubconsumer.viewmodels.utils.faker
+package com.maximo.douglas.githubconsumer.testutils.faker
 
 import com.maximo.douglas.domain.entities.gitpullrequest.GitPullRequest
-import com.maximo.douglas.githubconsumer.viewmodels.utils.faker.GitUserFaker.getGitUser3
-import com.maximo.douglas.githubconsumer.viewmodels.utils.faker.GitUserFaker.getGitUser4
+import com.maximo.douglas.githubconsumer.testutils.faker.GitUserFaker.getGitUser3
+import com.maximo.douglas.githubconsumer.testutils.faker.GitUserFaker.getGitUser4
 
 object GitPullRequestFaker {
 

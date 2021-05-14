@@ -15,10 +15,10 @@ import br.com.argmax.githubconsumer.R
 import com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots
 import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestClosedLabelStringFormat
 import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestOpenLabelStringFormat
-import com.maximo.douglas.githubconsumer.MainActivity
-import com.maximo.douglas.githubconsumer.utils.FileUtils
-import com.maximo.douglas.githubconsumer.utils.RecyclerViewMatcher.Companion.withRecyclerView
-import com.maximo.douglas.githubconsumer.utils.ThreadUtil.waitViewToComplete
+import com.maximo.douglas.githubconsumer.ui.MainActivity
+import com.maximo.douglas.githubconsumer.testutils.FileUtils
+import com.maximo.douglas.githubconsumer.testutils.RecyclerViewMatcher.Companion.withRecyclerView
+import com.maximo.douglas.githubconsumer.testutils.ThreadUtil.waitViewToComplete
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer

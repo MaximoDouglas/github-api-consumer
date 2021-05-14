@@ -1,4 +1,4 @@
-package com.maximo.douglas.githubconsumer.viewmodels.utils
+package com.maximo.douglas.githubconsumer.testutils
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

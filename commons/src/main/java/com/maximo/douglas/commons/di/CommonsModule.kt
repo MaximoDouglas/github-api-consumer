@@ -1,8 +1,8 @@
-package com.maximo.douglas.githubconsumer.di
+package com.maximo.douglas.commons.di
 
 import com.maximo.douglas.commons.utils.CoroutineContextProvider
 import org.koin.dsl.module
 
-val othersModule = module {
+val commonsModule = module {
     single { CoroutineContextProvider() }
 }

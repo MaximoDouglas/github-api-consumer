@@ -1,4 +1,4 @@
-package com.maximo.douglas.githubconsumer.components.utils
+package com.maximo.douglas.githubconsumer.testutils
 
 import android.app.Activity
 import org.junit.After

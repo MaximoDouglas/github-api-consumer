@@ -1,4 +1,4 @@
-package com.maximo.douglas.githubconsumer.viewmodels.utils.faker
+package com.maximo.douglas.githubconsumer.testutils.faker
 
 import com.maximo.douglas.domain.entities.user.GitUser
 

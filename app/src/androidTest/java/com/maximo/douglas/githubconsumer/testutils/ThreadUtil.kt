@@ -1,4 +1,4 @@
-package com.maximo.douglas.githubconsumer.utils
+package com.maximo.douglas.githubconsumer.testutils
 
 object ThreadUtil {
 

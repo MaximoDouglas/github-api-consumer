@@ -1,4 +1,4 @@
-package com.maximo.douglas.githubconsumer
+package com.maximo.douglas.githubconsumer.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
