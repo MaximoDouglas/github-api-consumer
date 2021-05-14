@@ -7,10 +7,10 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import br.com.argmax.githubconsumer.R
 import com.maximo.douglas.githubconsumer.MainActivity
-import com.maximo.douglas.githubconsumer.testutils.FileUtils.getJsonFromFile
-import com.maximo.douglas.githubconsumer.testutils.RecyclerViewMatcher.Companion.withRecyclerView
-import com.maximo.douglas.githubconsumer.testutils.StringUtils
-import com.maximo.douglas.githubconsumer.testutils.ThreadUtil.waitViewToComplete
+import com.maximo.douglas.githubconsumer.utils.FileUtils.getJsonFromFile
+import com.maximo.douglas.githubconsumer.utils.RecyclerViewMatcher.Companion.withRecyclerView
+import com.maximo.douglas.githubconsumer.utils.StringUtils
+import com.maximo.douglas.githubconsumer.utils.ThreadUtil.waitViewToComplete
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After

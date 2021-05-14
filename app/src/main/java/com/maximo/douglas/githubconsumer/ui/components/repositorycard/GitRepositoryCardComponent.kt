@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.GitRepositoryCardComponentBinding
-import com.maximo.douglas.githubconsumer.domain.entities.gitrepository.GitRepository
+import com.maximo.douglas.domain.entities.gitrepository.GitRepository
 
 class GitRepositoryCardComponent @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyle: Int = 0

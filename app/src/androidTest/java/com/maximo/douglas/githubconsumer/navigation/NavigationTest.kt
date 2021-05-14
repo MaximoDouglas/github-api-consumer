@@ -15,9 +15,9 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import br.com.argmax.githubconsumer.R
 import com.maximo.douglas.githubconsumer.MainActivity
-import com.maximo.douglas.githubconsumer.testutils.FileUtils.getJsonFromFile
-import com.maximo.douglas.githubconsumer.testutils.RecyclerViewMatcher.Companion.withRecyclerView
-import com.maximo.douglas.githubconsumer.testutils.ThreadUtil.waitViewToComplete
+import com.maximo.douglas.githubconsumer.utils.FileUtils.getJsonFromFile
+import com.maximo.douglas.githubconsumer.utils.RecyclerViewMatcher.Companion.withRecyclerView
+import com.maximo.douglas.githubconsumer.utils.ThreadUtil.waitViewToComplete
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer

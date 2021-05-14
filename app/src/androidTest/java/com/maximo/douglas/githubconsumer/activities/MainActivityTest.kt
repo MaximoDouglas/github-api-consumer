@@ -8,7 +8,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import br.com.argmax.githubconsumer.R
 import com.maximo.douglas.githubconsumer.MainActivity
-import com.maximo.douglas.githubconsumer.testutils.ThreadUtil.waitViewToComplete
+import com.maximo.douglas.githubconsumer.utils.ThreadUtil.waitViewToComplete
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

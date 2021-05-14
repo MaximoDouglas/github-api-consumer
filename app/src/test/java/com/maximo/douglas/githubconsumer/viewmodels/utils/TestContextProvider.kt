@@ -1,6 +1,6 @@
 package com.maximo.douglas.githubconsumer.viewmodels.utils
 
-import com.maximo.douglas.githubconsumer.testutils.CoroutineContextProvider
+import com.maximo.douglas.githubconsumer.utils.CoroutineContextProvider
 import kotlinx.coroutines.Dispatchers
 import kotlin.coroutines.CoroutineContext
 

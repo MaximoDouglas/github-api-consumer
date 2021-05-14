@@ -1,6 +1,6 @@
 package com.maximo.douglas.githubconsumer.service.gitrepository
 
-import com.maximo.douglas.githubconsumer.domain.entities.gitrepository.GitRepositoryApiResponse
+import com.maximo.douglas.domain.entities.gitrepository.GitRepositoryApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

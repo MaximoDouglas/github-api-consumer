@@ -1,6 +1,6 @@
 package com.maximo.douglas.githubconsumer.service.gitpullrequest
 
-import com.maximo.douglas.githubconsumer.domain.entities.gitpullrequest.GitPullRequest
+import com.maximo.douglas.domain.entities.gitpullrequest.GitPullRequest
 
 interface GitPullRequestRemoteDataSource {
 

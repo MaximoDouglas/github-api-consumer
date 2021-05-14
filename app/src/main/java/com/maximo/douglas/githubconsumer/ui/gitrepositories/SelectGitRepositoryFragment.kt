@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.SelectGitRepositoryFragmentBinding
-import com.maximo.douglas.githubconsumer.domain.entities.gitrepository.GitRepository
-import com.maximo.douglas.githubconsumer.testutils.EndlessRecyclerOnScrollListener
+import com.maximo.douglas.domain.entities.gitrepository.GitRepository
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryFragmentDirections.actionSelectRepositoryFragmentToSelectGitPullRequestFragment
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.adapters.SelectGitRepositoryAdapter
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.listeners.OnGitRepositoryClickListener
+import com.maximo.douglas.githubconsumer.utils.EndlessRecyclerOnScrollListener
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SelectGitRepositoryFragment : Fragment(), OnGitRepositoryClickListener {

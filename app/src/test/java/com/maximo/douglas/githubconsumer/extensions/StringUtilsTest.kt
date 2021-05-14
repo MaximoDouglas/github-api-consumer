@@ -1,6 +1,6 @@
 package com.maximo.douglas.githubconsumer.extensions
 
-import com.maximo.douglas.githubconsumer.testutils.StringUtils
+import com.maximo.douglas.githubconsumer.utils.StringUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
