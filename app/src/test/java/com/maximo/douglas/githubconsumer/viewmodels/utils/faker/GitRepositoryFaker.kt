@@ -1,6 +1,6 @@
 package com.maximo.douglas.githubconsumer.viewmodels.utils.faker
 
-import com.maximo.douglas.githubconsumer.domain.entities.gitrepository.GitRepository
+import com.maximo.douglas.domain.entities.gitrepository.GitRepository
 
 object GitRepositoryFaker {
 

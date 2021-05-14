@@ -2,7 +2,7 @@ package com.maximo.douglas.githubconsumer.viewmodels.gitrepository.context
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.maximo.douglas.githubconsumer.domain.entities.gitrepository.GitRepository
+import com.maximo.douglas.domain.entities.gitrepository.GitRepository
 import com.maximo.douglas.githubconsumer.service.gitrepository.GitRepositoryRemoteDataSource
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
