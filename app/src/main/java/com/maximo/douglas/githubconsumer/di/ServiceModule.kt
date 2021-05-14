@@ -1,12 +1,12 @@
 package com.maximo.douglas.githubconsumer.di
 
-import com.maximo.douglas.githubconsumer.service.ApiDataSource
-import com.maximo.douglas.githubconsumer.service.gitpullrequest.GitPullRequestApiDataSource
-import com.maximo.douglas.githubconsumer.service.gitrepository.GitRepositoryApiDataSource
+import com.maximo.douglas.data.remote.ApiDataSource.Companion.createService
+import com.maximo.douglas.data.remote.gitpullrequest.GitPullRequestApiDataSource
+import com.maximo.douglas.data.remote.gitrepository.GitRepositoryApiDataSource
 import org.koin.dsl.module
 
 @Suppress("USELESS_CAST")
 val serviceModule = module {
-    single { ApiDataSource.createService(GitRepositoryApiDataSource::class.java) as GitRepositoryApiDataSource }
-    single { ApiDataSource.createService(GitPullRequestApiDataSource::class.java) as GitPullRequestApiDataSource }
+    single { createService(GitRepositoryApiDataSource::class.java) as GitRepositoryApiDataSource }
+    single { createService(GitPullRequestApiDataSource::class.java) as GitPullRequestApiDataSource }
 }

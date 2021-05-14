@@ -1,4 +1,4 @@
-package com.maximo.douglas.githubconsumer.service.gitpullrequest
+package com.maximo.douglas.data.remote.gitpullrequest
 
 import com.maximo.douglas.domain.entities.gitpullrequest.GitPullRequest
 import retrofit2.http.GET

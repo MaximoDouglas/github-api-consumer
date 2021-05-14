@@ -1,7 +1,7 @@
-package com.maximo.douglas.githubconsumer.service
+package com.maximo.douglas.data.remote
 
-import br.com.argmax.githubconsumer.BuildConfig.BASE_URL
 import com.google.gson.GsonBuilder
+import com.maximo.douglas.data.BuildConfig.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -35,8 +35,5 @@ class ApiDataSource {
 
             return retrofit.create(serviceClass)
         }
-
     }
-
-
 }

@@ -3,7 +3,7 @@ package com.maximo.douglas.githubconsumer.viewmodels.gitrepository.context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.maximo.douglas.domain.entities.gitrepository.GitRepository
-import com.maximo.douglas.githubconsumer.service.gitrepository.GitRepositoryRemoteDataSource
+import com.maximo.douglas.data.remote.gitrepository.GitRepositoryRemoteDataSource
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
 import com.maximo.douglas.githubconsumer.viewmodels.utils.TestContextProvider
@@ -27,7 +27,7 @@ open class SelectGitRepositoryViewModelTest {
     val testCoroutineRule = TestCoroutineRule()
 
     @Mock
-    private lateinit var mGitRepositoryRemoteDataSource: GitRepositoryRemoteDataSource
+    private lateinit var mGitRepositoryRemoteDataSource: com.maximo.douglas.data.remote.gitrepository.GitRepositoryRemoteDataSource
 
     @Mock
     private lateinit var mViewStateObserver: Observer<SelectGitRepositoryViewModelState>

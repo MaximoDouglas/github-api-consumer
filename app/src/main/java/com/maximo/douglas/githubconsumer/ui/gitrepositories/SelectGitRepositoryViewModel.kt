@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.maximo.douglas.domain.entities.gitrepository.GitRepository
-import com.maximo.douglas.githubconsumer.service.gitrepository.GitRepositoryRemoteDataSource
 import com.maximo.douglas.githubconsumer.utils.CoroutineContextProvider
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
@@ -13,7 +12,7 @@ import kotlinx.coroutines.withContext
 
 @Suppress("UNCHECKED_CAST")
 class SelectGitRepositoryViewModel(
-    private val gitRepositoryRemoteDataSource: GitRepositoryRemoteDataSource,
+    private val gitRepositoryRemoteDataSource: com.maximo.douglas.data.remote.gitrepository.GitRepositoryRemoteDataSource,
     private val contextProvider: CoroutineContextProvider
 ) : ViewModel() {
 

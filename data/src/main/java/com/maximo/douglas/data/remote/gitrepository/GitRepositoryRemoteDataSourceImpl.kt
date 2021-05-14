@@ -1,4 +1,4 @@
-package com.maximo.douglas.githubconsumer.service.gitrepository
+package com.maximo.douglas.data.remote.gitrepository
 
 class GitRepositoryRemoteDataSourceImpl(
     private val mGitRepositoryApiDataSource: GitRepositoryApiDataSource

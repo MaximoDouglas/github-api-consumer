@@ -1,9 +1,9 @@
 package com.maximo.douglas.githubconsumer.di
 
-import com.maximo.douglas.githubconsumer.service.gitpullrequest.GitPullRequestRemoteDataSource
-import com.maximo.douglas.githubconsumer.service.gitpullrequest.GitPullRequestRemoteDataSourceImpl
-import com.maximo.douglas.githubconsumer.service.gitrepository.GitRepositoryRemoteDataSource
-import com.maximo.douglas.githubconsumer.service.gitrepository.GitRepositoryRemoteDataSourceImpl
+import com.maximo.douglas.data.remote.gitpullrequest.GitPullRequestRemoteDataSource
+import com.maximo.douglas.data.remote.gitpullrequest.GitPullRequestRemoteDataSourceImpl
+import com.maximo.douglas.data.remote.gitrepository.GitRepositoryRemoteDataSource
+import com.maximo.douglas.data.remote.gitrepository.GitRepositoryRemoteDataSourceImpl
 import org.koin.dsl.module
 
 @Suppress("USELESS_CAST")
