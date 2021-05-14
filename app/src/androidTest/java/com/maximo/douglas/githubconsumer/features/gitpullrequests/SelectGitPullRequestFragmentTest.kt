@@ -12,12 +12,12 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import br.com.argmax.githubconsumer.R
+import com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots
+import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestClosedLabelStringFormat
+import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestOpenLabelStringFormat
 import com.maximo.douglas.githubconsumer.MainActivity
 import com.maximo.douglas.githubconsumer.utils.FileUtils
 import com.maximo.douglas.githubconsumer.utils.RecyclerViewMatcher.Companion.withRecyclerView
-import com.maximo.douglas.githubconsumer.utils.StringUtils.compactStringWithDots
-import com.maximo.douglas.githubconsumer.utils.StringUtils.gitPullRequestClosedLabelStringFormat
-import com.maximo.douglas.githubconsumer.utils.StringUtils.gitPullRequestOpenLabelStringFormat
 import com.maximo.douglas.githubconsumer.utils.ThreadUtil.waitViewToComplete
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse

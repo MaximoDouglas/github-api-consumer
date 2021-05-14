@@ -12,4 +12,4 @@ import org.junit.runners.Suite
     SelectGitRepositoryViewModelSuiteTest::class,
     SelectGitPullRequestViewModelSuiteTest::class
 )
-class ViewModelSuiteTest
+class ViewModelTestSuite

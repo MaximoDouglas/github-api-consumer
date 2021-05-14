@@ -9,7 +9,6 @@ import br.com.argmax.githubconsumer.R
 import com.maximo.douglas.githubconsumer.MainActivity
 import com.maximo.douglas.githubconsumer.utils.FileUtils.getJsonFromFile
 import com.maximo.douglas.githubconsumer.utils.RecyclerViewMatcher.Companion.withRecyclerView
-import com.maximo.douglas.githubconsumer.utils.StringUtils
 import com.maximo.douglas.githubconsumer.utils.ThreadUtil.waitViewToComplete
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -29,7 +28,7 @@ class SelectGitRepositoryFragmentTest {
 
         private const val REPOSITORY_FORKS_COUNT = 34768.toString()
 
-        private val REPOSITORY_DESCRIPTION = StringUtils.compactStringWithDots(
+        private val REPOSITORY_DESCRIPTION = com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots(
             ":books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计、Java、Python、C++"
         )
 

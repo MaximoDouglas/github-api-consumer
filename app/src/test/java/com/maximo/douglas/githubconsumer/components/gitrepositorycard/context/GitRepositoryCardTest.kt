@@ -2,11 +2,11 @@ package com.maximo.douglas.githubconsumer.components.gitrepositorycard.context
 
 import android.app.Activity
 import android.view.View
+import com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots
 import com.maximo.douglas.domain.entities.gitrepository.GitRepository
 import com.maximo.douglas.domain.entities.user.GitUser
 import com.maximo.douglas.githubconsumer.components.utils.BaseComponentTest
 import com.maximo.douglas.githubconsumer.ui.components.repositorycard.GitRepositoryCardComponent
-import com.maximo.douglas.githubconsumer.utils.StringUtils.compactStringWithDots
 import kotlinx.android.synthetic.main.git_repository_card_component.view.*
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

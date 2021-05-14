@@ -17,7 +17,6 @@ import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryF
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.adapters.SelectGitRepositoryAdapter
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.listeners.OnGitRepositoryClickListener
-import com.maximo.douglas.githubconsumer.utils.EndlessRecyclerOnScrollListener
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SelectGitRepositoryFragment : Fragment(), OnGitRepositoryClickListener {
@@ -63,7 +62,7 @@ class SelectGitRepositoryFragment : Fragment(), OnGitRepositoryClickListener {
 
         mBinding?.selectRepositoryFragmentRecyclerView?.adapter = mAdapter
         mBinding?.selectRepositoryFragmentRecyclerView?.addOnScrollListener(object :
-            EndlessRecyclerOnScrollListener() {
+            com.maximo.douglas.commons.utils.EndlessRecyclerOnScrollListener() {
             override fun onLoadMore() {
                 mApiRequestPage++
                 loadData()

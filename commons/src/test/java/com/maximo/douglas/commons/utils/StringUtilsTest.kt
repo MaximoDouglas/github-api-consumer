@@ -1,6 +1,5 @@
-package com.maximo.douglas.githubconsumer.extensions
+package com.maximo.douglas.commons.utils
 
-import com.maximo.douglas.githubconsumer.utils.StringUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -27,13 +26,16 @@ class StringUtilsTest {
 
     @Test
     fun test_if_compactStringWithDots_is_working_correctly() {
-        assertEquals(COMPACTED_TEXT, StringUtils.compactStringWithDots(TEXT_TO_COMPACT))
+        assertEquals(
+            COMPACTED_TEXT, com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots(
+                TEXT_TO_COMPACT
+            ))
     }
 
     @Test
     fun test_if_gitPullRequestOpenLabelStringFormat_is_working_correctly() {
         assertEquals(
-            OPEN_PULL_REQUESTS_LABEL, StringUtils.gitPullRequestOpenLabelStringFormat(
+            OPEN_PULL_REQUESTS_LABEL, com.maximo.douglas.commons.utils.StringUtils.gitPullRequestOpenLabelStringFormat(
                 OPEN_PULL_REQUESTS_QUANTITY
             )
         )
@@ -42,7 +44,7 @@ class StringUtilsTest {
     @Test
     fun test_if_gitPullRequestClosedLabelStringFormat_is_working_correctly() {
         assertEquals(
-            CLOSED_PULL_REQUESTS_LABEL, StringUtils.gitPullRequestClosedLabelStringFormat(
+            CLOSED_PULL_REQUESTS_LABEL, com.maximo.douglas.commons.utils.StringUtils.gitPullRequestClosedLabelStringFormat(
                 CLOSED_PULL_REQUESTS_QUANTITY
             )
         )

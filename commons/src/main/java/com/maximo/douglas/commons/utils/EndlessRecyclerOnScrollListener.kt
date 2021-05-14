@@ -1,4 +1,4 @@
-package com.maximo.douglas.githubconsumer.utils
+package com.maximo.douglas.commons.utils
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView

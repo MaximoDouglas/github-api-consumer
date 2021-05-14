@@ -1,8 +1,8 @@
 package com.maximo.douglas.domain.entities.gitrepository
 
 import com.google.gson.annotations.SerializedName
+import com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots
 import com.maximo.douglas.domain.entities.user.GitUser
-import com.maximo.douglas.domain.utils.StringUtils.compactStringWithDots
 import java.io.Serializable
 
 data class GitRepository(

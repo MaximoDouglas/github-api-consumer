@@ -10,4 +10,4 @@ import org.junit.runners.Suite
     GitRepositoryCardSuiteTest::class,
     GitPullRequestCardSuiteTest::class
 )
-class ComponentSuiteTest
+class ComponentTestSuite

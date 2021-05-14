@@ -5,8 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.maximo.douglas.domain.entities.gitpullrequest.GitPullRequest
-import com.maximo.douglas.data.remote.gitpullrequest.GitPullRequestRemoteDataSource
-import com.maximo.douglas.githubconsumer.utils.CoroutineContextProvider
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -14,7 +12,7 @@ import kotlinx.coroutines.withContext
 @Suppress("UNCHECKED_CAST")
 class SelectGitPullRequestViewModel(
     private val gitPullRequestRemoteDataSource: com.maximo.douglas.data.remote.gitpullrequest.GitPullRequestRemoteDataSource,
-    private val contextProvider: CoroutineContextProvider
+    private val contextProvider: com.maximo.douglas.commons.utils.CoroutineContextProvider
 ) : ViewModel() {
 
     private val stateLiveData = MutableLiveData<SelectGitPullRequestViewModelState>()

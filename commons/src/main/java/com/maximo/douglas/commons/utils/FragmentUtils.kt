@@ -1,4 +1,4 @@
-package com.maximo.douglas.githubconsumer.utils
+package com.maximo.douglas.commons.utils
 
 import android.os.Bundle
 

@@ -1,4 +1,4 @@
-package com.maximo.douglas.domain
+package com.maximo.douglas.commons
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.maximo.douglas.domain", appContext.packageName)
+        assertEquals("com.maximo.douglas.commons.test", appContext.packageName)
     }
 }
