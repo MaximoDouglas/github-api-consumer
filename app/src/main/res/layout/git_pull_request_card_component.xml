@@ -5,8 +5,8 @@
     <data>
 
         <variable
-            name="gitPullRequestCardDto"
-            type="br.com.argmax.githubconsumer.ui.components.pullrequestcard.dtos.GitPullRequestCardDto" />
+            name="gitPullRequest"
+            type="com.maximo.douglas.domain.entities.gitpullrequest.GitPullRequest" />
 
     </data>
 
@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="@{gitPullRequestCardDto.gitPullRequestTitle}"
+                android:text="@{gitPullRequest.title}"
                 android:textColor="@color/blueGray600"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -37,13 +37,13 @@
 
             <TextView
                 android:id="@+id/git_pull_request_card_body_text_view"
-                visibleOrGone="@{gitPullRequestCardDto.gitPullRequestBody != null}"
+                visibleOrGone="@{gitPullRequest.body != null}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:ellipsize="end"
                 android:maxLength="75"
-                android:text="@{gitPullRequestCardDto.gitPullRequestBody}"
+                android:text="@{gitPullRequest.shortGitPullRequestBody}"
                 android:textColor="@color/blueGray900"
                 android:textSize="14sp"
                 tools:text="Descrição do respositório Lorem Ipsum is simply dummy text of the printing and" />
@@ -59,7 +59,7 @@
 
             <ImageView
                 android:id="@+id/git_pull_request_card_user_image_image_view"
-                imageUri="@{gitPullRequestCardDto.userImageUrl}"
+                imageUri="@{gitPullRequest.user.avatarUrl}"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 tools:src="@drawable/ic_user" />
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="2dp"
-                android:text="@{gitPullRequestCardDto.userName}"
+                android:text="@{gitPullRequest.user.login}"
                 android:textColor="@color/blue600"
                 tools:text="username" />
 
