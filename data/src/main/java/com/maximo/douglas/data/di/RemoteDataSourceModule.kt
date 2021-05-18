@@ -1,4 +1,4 @@
-package com.maximo.douglas.githubconsumer.di
+package com.maximo.douglas.data.di
 
 import com.maximo.douglas.data.remote.gitpullrequest.GitPullRequestRemoteDataSource
 import com.maximo.douglas.data.remote.gitpullrequest.GitPullRequestRemoteDataSourceImpl
