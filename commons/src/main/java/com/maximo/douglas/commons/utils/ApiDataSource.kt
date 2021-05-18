@@ -1,7 +1,6 @@
-package com.maximo.douglas.data.remote
+package com.maximo.douglas.commons.utils
 
 import com.google.gson.GsonBuilder
-import com.maximo.douglas.data.BuildConfig.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -13,7 +12,7 @@ class ApiDataSource {
 
     companion object {
 
-        fun <S> createService(serviceClass: Class<S>): S {
+        fun <S> createService(baseUrl: String, serviceClass: Class<S>): S {
             val loggingInterceptor = HttpLoggingInterceptor()
             loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
@@ -27,7 +26,7 @@ class ApiDataSource {
                 .create()
 
             val retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(baseUrl)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(httpClient.build())

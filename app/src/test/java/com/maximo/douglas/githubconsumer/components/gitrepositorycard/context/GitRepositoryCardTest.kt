@@ -3,8 +3,8 @@ package com.maximo.douglas.githubconsumer.components.gitrepositorycard.context
 import android.app.Activity
 import android.view.View
 import com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots
-import com.maximo.douglas.domain.entities.gitrepository.GitRepository
-import com.maximo.douglas.domain.entities.user.GitUser
+import com.maximo.douglas.domain.entity.gitrepository.GitRepository
+import com.maximo.douglas.domain.entity.user.GitUser
 import com.maximo.douglas.githubconsumer.testutils.BaseComponentTest
 import com.maximo.douglas.githubconsumer.ui.components.repositorycard.GitRepositoryCardComponent
 import kotlinx.android.synthetic.main.git_repository_card_component.view.*

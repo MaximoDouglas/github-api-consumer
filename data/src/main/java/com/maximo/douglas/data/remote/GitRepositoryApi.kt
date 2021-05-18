@@ -1,10 +1,10 @@
-package com.maximo.douglas.data.remote.gitrepository
+package com.maximo.douglas.data.remote
 
-import com.maximo.douglas.domain.entities.gitrepository.GitRepositoryApiResponse
+import com.maximo.douglas.data.model.GitRepositoryApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface GitRepositoryApiDataSource {
+interface GitRepositoryApi {
 
     @GET("search/repositories")
     suspend fun getGitRepositoryApiResponse(

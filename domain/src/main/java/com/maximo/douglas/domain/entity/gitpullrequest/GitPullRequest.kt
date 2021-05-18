@@ -1,8 +1,8 @@
-package com.maximo.douglas.domain.entities.gitpullrequest
+package com.maximo.douglas.domain.entity.gitpullrequest
 
 import com.google.gson.annotations.SerializedName
 import com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots
-import com.maximo.douglas.domain.entities.user.GitUser
+import com.maximo.douglas.domain.entity.user.GitUser
 import java.io.Serializable
 
 data class GitPullRequest(
@@ -22,4 +22,9 @@ data class GitPullRequest(
         return compactStringWithDots(body, 60)
     }
 
+}
+
+enum class PullRequestStateEnum(val value: String) {
+    OPEN("open"),
+    CLOSED("closed")
 }

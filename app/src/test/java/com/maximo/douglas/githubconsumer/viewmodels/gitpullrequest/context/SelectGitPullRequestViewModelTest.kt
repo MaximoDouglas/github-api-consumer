@@ -2,12 +2,13 @@ package com.maximo.douglas.githubconsumer.viewmodels.gitpullrequest.context
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.maximo.douglas.domain.entities.gitpullrequest.GitPullRequest
-import com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel
-import com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
+import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
+import com.maximo.douglas.domain.usecase.GetGitPullRequestUseCase
 import com.maximo.douglas.githubconsumer.testutils.TestContextProvider
 import com.maximo.douglas.githubconsumer.testutils.TestCoroutineRule
 import com.maximo.douglas.githubconsumer.testutils.faker.GitPullRequestFaker
+import com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel
+import com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
@@ -26,7 +27,7 @@ open class SelectGitPullRequestViewModelTest {
     val testCoroutineRule = TestCoroutineRule()
 
     @Mock
-    private lateinit var mGitPullRequestRemoteDataSource: com.maximo.douglas.data.remote.gitpullrequest.GitPullRequestRemoteDataSource
+    private lateinit var mGetGitPullRequestUseCase: GetGitPullRequestUseCase
 
     @Mock
     private lateinit var mViewStateObserver: Observer<SelectGitPullRequestViewModelState>
@@ -50,7 +51,7 @@ open class SelectGitPullRequestViewModelTest {
         MockitoAnnotations.initMocks(this)
 
         mSelectPullRequestViewModel = SelectGitPullRequestViewModel(
-            gitPullRequestRemoteDataSource = mGitPullRequestRemoteDataSource,
+            getGitPullRequestUseCase = mGetGitPullRequestUseCase,
             contextProvider = TestContextProvider()
         ).apply {
             getStateLiveData().observeForever(mViewStateObserver)
@@ -68,7 +69,7 @@ open class SelectGitPullRequestViewModelTest {
     fun `should success when data source returns the expected data`() =
         testCoroutineRule.runBlockingTest {
             `when`(
-                mGitPullRequestRemoteDataSource.getGitPullRequestList(
+                mGetGitPullRequestUseCase.invoke(
                     repository = FAKE_REPOSITORY_NAME,
                     owner = FAKE_USER_LOGIN,
                     page = FAKE_REQUEST_PAGE
@@ -95,7 +96,7 @@ open class SelectGitPullRequestViewModelTest {
         testCoroutineRule.runBlockingTest {
             val error = Error()
             `when`(
-                mGitPullRequestRemoteDataSource.getGitPullRequestList(
+                mGetGitPullRequestUseCase.invoke(
                     repository = FAKE_REPOSITORY_NAME,
                     owner = FAKE_USER_LOGIN,
                     page = FAKE_REQUEST_PAGE

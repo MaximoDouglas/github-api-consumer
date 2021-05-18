@@ -1,4 +1,4 @@
-package com.maximo.douglas.domain.entities.user
+package com.maximo.douglas.domain.entity.user
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
