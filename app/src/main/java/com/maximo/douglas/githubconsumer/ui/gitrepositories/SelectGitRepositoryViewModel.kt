@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.maximo.douglas.commons.utils.CoroutineContextProvider
-import com.maximo.douglas.domain.repository.GitRepositoryRepository
 import com.maximo.douglas.domain.entity.gitrepository.GitRepository
 import com.maximo.douglas.domain.usecase.GetGitRepositoryUseCase
 import kotlinx.coroutines.CoroutineExceptionHandler

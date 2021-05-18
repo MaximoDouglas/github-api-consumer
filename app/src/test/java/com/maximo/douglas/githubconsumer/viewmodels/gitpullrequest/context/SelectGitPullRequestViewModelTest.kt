@@ -2,7 +2,6 @@ package com.maximo.douglas.githubconsumer.viewmodels.gitpullrequest.context
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.maximo.douglas.domain.repository.GitPullRequestRepository
 import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
 import com.maximo.douglas.domain.usecase.GetGitPullRequestUseCase
 import com.maximo.douglas.githubconsumer.testutils.TestContextProvider
