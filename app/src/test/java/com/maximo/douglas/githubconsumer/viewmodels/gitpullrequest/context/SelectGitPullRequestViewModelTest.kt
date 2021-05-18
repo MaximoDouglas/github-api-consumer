@@ -2,6 +2,7 @@ package com.maximo.douglas.githubconsumer.viewmodels.gitpullrequest.context
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
+import com.maximo.douglas.data.repository.GitPullRequestRepository
 import com.maximo.douglas.domain.entities.gitpullrequest.GitPullRequest
 import com.maximo.douglas.githubconsumer.testutils.TestContextProvider
 import com.maximo.douglas.githubconsumer.testutils.TestCoroutineRule
@@ -26,7 +27,7 @@ open class SelectGitPullRequestViewModelTest {
     val testCoroutineRule = TestCoroutineRule()
 
     @Mock
-    private lateinit var mGitPullRequestRemoteDataSource: com.maximo.douglas.data.remote.gitpullrequest.GitPullRequestRemoteDataSource
+    private lateinit var mGitPullRequestRepository: GitPullRequestRepository
 
     @Mock
     private lateinit var mViewStateObserver: Observer<SelectGitPullRequestViewModelState>
@@ -50,7 +51,7 @@ open class SelectGitPullRequestViewModelTest {
         MockitoAnnotations.initMocks(this)
 
         mSelectPullRequestViewModel = SelectGitPullRequestViewModel(
-            gitPullRequestRemoteDataSource = mGitPullRequestRemoteDataSource,
+            gitPullRequestRemoteDataSource = mGitPullRequestRepository,
             contextProvider = TestContextProvider()
         ).apply {
             getStateLiveData().observeForever(mViewStateObserver)
@@ -68,7 +69,7 @@ open class SelectGitPullRequestViewModelTest {
     fun `should success when data source returns the expected data`() =
         testCoroutineRule.runBlockingTest {
             `when`(
-                mGitPullRequestRemoteDataSource.getGitPullRequestList(
+                mGitPullRequestRepository.getGitPullRequestList(
                     repository = FAKE_REPOSITORY_NAME,
                     owner = FAKE_USER_LOGIN,
                     page = FAKE_REQUEST_PAGE
@@ -95,7 +96,7 @@ open class SelectGitPullRequestViewModelTest {
         testCoroutineRule.runBlockingTest {
             val error = Error()
             `when`(
-                mGitPullRequestRemoteDataSource.getGitPullRequestList(
+                mGitPullRequestRepository.getGitPullRequestList(
                     repository = FAKE_REPOSITORY_NAME,
                     owner = FAKE_USER_LOGIN,
                     page = FAKE_REQUEST_PAGE

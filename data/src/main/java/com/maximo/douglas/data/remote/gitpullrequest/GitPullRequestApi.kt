@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface GitPullRequestApiDataSource {
+interface GitPullRequestApi {
 
     @GET("repos/{owner}/{repository}/pulls")
     suspend fun getGitPullRequestList(

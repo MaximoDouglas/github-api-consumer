@@ -2,6 +2,7 @@ package com.maximo.douglas.githubconsumer.viewmodels.gitrepository.context
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
+import com.maximo.douglas.data.repository.GitRepositoryRepository
 import com.maximo.douglas.domain.entities.gitrepository.GitRepository
 import com.maximo.douglas.githubconsumer.testutils.TestContextProvider
 import com.maximo.douglas.githubconsumer.testutils.TestCoroutineRule
@@ -26,7 +27,7 @@ open class SelectGitRepositoryViewModelTest {
     val testCoroutineRule = TestCoroutineRule()
 
     @Mock
-    private lateinit var mGitRepositoryRemoteDataSource: com.maximo.douglas.data.remote.gitrepository.GitRepositoryRemoteDataSource
+    private lateinit var mGitRepositoryRepository: GitRepositoryRepository
 
     @Mock
     private lateinit var mViewStateObserver: Observer<SelectGitRepositoryViewModelState>
@@ -46,7 +47,7 @@ open class SelectGitRepositoryViewModelTest {
         MockitoAnnotations.initMocks(this)
 
         mSelectRepositoryViewModel = SelectGitRepositoryViewModel(
-            gitRepositoryRemoteDataSource = mGitRepositoryRemoteDataSource,
+            gitRepositoryRemoteDataSource = mGitRepositoryRepository,
             contextProvider = TestContextProvider()
         ).apply {
             getStateLiveData().observeForever(mViewStateObserver)
@@ -63,7 +64,7 @@ open class SelectGitRepositoryViewModelTest {
 
     fun `should success when data source returns the expected data`() =
         testCoroutineRule.runBlockingTest {
-            `when`(mGitRepositoryRemoteDataSource.getGitRepositoryList(REQUEST_PAGE)).thenReturn(
+            `when`(mGitRepositoryRepository.getGitRepositoryList(REQUEST_PAGE)).thenReturn(
                 mGitRepositoryList
             )
 
@@ -80,7 +81,7 @@ open class SelectGitRepositoryViewModelTest {
     fun `should throw error when data source throws exception`() =
         testCoroutineRule.runBlockingTest {
             val error = Error()
-            `when`(mGitRepositoryRemoteDataSource.getGitRepositoryList(REQUEST_PAGE)).thenThrow(
+            `when`(mGitRepositoryRepository.getGitRepositoryList(REQUEST_PAGE)).thenThrow(
                 error
             )
 
