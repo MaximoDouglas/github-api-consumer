@@ -4,15 +4,17 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.maximo.douglas.domain.entities.gitpullrequest.GitPullRequest
+import com.maximo.douglas.commons.utils.CoroutineContextProvider
+import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
+import com.maximo.douglas.domain.usecase.GetGitPullRequestUseCase
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 @Suppress("UNCHECKED_CAST")
 class SelectGitPullRequestViewModel(
-    private val gitPullRequestRemoteDataSource: com.maximo.douglas.data.remote.gitpullrequest.GitPullRequestRemoteDataSource,
-    private val contextProvider: com.maximo.douglas.commons.utils.CoroutineContextProvider
+    private val getGitPullRequestUseCase: GetGitPullRequestUseCase,
+    private val contextProvider: CoroutineContextProvider
 ) : ViewModel() {
 
     private val stateLiveData = MutableLiveData<SelectGitPullRequestViewModelState>()
@@ -25,9 +27,10 @@ class SelectGitPullRequestViewModel(
 
     fun getGitPullRequestList(owner: String, repository: String, page: Int) {
         stateLiveData.value = SelectGitPullRequestViewModelState.Loading
+
         viewModelScope.launch(handler) {
             val data = withContext(contextProvider.IO) {
-                gitPullRequestRemoteDataSource.getGitPullRequestList(
+                getGitPullRequestUseCase.invoke(
                     owner = owner,
                     repository = repository,
                     page = page

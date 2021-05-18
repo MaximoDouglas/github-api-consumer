@@ -1,6 +1,6 @@
 package com.maximo.douglas.githubconsumer.testutils.faker
 
-import com.maximo.douglas.domain.entities.user.GitUser
+import com.maximo.douglas.domain.entity.user.GitUser
 
 object GitUserFaker {
 

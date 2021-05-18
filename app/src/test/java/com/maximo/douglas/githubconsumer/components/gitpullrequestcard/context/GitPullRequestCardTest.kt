@@ -3,8 +3,8 @@ package com.maximo.douglas.githubconsumer.components.gitpullrequestcard.context
 import android.app.Activity
 import android.view.View
 import com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots
-import com.maximo.douglas.domain.entities.gitpullrequest.GitPullRequest
-import com.maximo.douglas.domain.entities.user.GitUser
+import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
+import com.maximo.douglas.domain.entity.user.GitUser
 import com.maximo.douglas.githubconsumer.testutils.BaseComponentTest
 import com.maximo.douglas.githubconsumer.ui.components.pullrequestcard.GitPullRequestCardComponent
 import kotlinx.android.synthetic.main.git_pull_request_card_component.view.*

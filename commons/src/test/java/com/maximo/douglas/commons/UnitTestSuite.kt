@@ -8,4 +8,4 @@ import org.junit.runners.Suite
 @Suite.SuiteClasses(
     StringUtilsTest::class
 )
-class UnitSuiteTest
+class UnitTestSuite
