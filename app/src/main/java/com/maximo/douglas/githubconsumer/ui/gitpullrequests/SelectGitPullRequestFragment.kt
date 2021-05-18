@@ -20,8 +20,8 @@ import com.maximo.douglas.commons.utils.NavigationArgumentKeys.KEY_OWNER_LOGIN
 import com.maximo.douglas.commons.utils.NavigationArgumentKeys.KEY_REPOSITORY_NAME
 import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestClosedLabelStringFormat
 import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestOpenLabelStringFormat
-import com.maximo.douglas.domain.entities.gitpullrequest.GitPullRequest
-import com.maximo.douglas.domain.entities.gitpullrequest.PullRequestStateEnum
+import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
+import com.maximo.douglas.domain.entity.gitpullrequest.PullRequestStateEnum
 import com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
 import com.maximo.douglas.githubconsumer.ui.gitpullrequests.adapters.SelectGitPullRequestAdapter
 import com.maximo.douglas.githubconsumer.ui.gitpullrequests.listeners.OnPullRequestClickListener

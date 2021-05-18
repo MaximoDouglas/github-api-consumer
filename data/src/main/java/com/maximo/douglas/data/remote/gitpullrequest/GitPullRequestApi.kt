@@ -1,6 +1,6 @@
 package com.maximo.douglas.data.remote.gitpullrequest
 
-import com.maximo.douglas.domain.entities.gitpullrequest.GitPullRequest
+import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.GitPullRequestCardViewHolderBinding
-import com.maximo.douglas.domain.entities.gitpullrequest.GitPullRequest
+import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
 import com.maximo.douglas.githubconsumer.ui.gitpullrequests.listeners.OnPullRequestClickListener
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.git_pull_request_card_view_holder.*

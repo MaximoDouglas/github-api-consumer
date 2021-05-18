@@ -7,7 +7,7 @@ import com.maximo.douglas.data.repository.GitRepositoryRepositoryImpl
 import org.koin.dsl.module
 
 @Suppress("USELESS_CAST")
-val remoteDataSourceModule = module {
+val repositoryModule = module {
     single { GitRepositoryRepositoryImpl(get()) as GitRepositoryRepository }
     single { GitPullRequestRepositoryImpl(get()) as GitPullRequestRepository }
 }

@@ -6,7 +6,7 @@
 
         <variable
             name="gitRepository"
-            type="com.maximo.douglas.domain.entities.gitrepository.GitRepository" />
+            type="com.maximo.douglas.domain.entity.gitrepository.GitRepository" />
 
     </data>
 

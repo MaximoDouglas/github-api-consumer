@@ -1,6 +1,6 @@
 package com.maximo.douglas.githubconsumer.testutils.faker
 
-import com.maximo.douglas.domain.entities.gitrepository.GitRepository
+import com.maximo.douglas.domain.entity.gitrepository.GitRepository
 
 object GitRepositoryFaker {
 

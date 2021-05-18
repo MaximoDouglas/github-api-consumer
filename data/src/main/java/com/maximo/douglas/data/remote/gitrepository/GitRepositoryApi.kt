@@ -1,6 +1,6 @@
 package com.maximo.douglas.data.remote.gitrepository
 
-import com.maximo.douglas.domain.entities.gitrepository.GitRepositoryApiResponse
+import com.maximo.douglas.data.model.GitRepositoryApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

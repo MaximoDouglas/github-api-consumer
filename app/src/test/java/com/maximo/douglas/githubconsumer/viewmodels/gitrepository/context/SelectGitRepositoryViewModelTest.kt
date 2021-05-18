@@ -3,7 +3,7 @@ package com.maximo.douglas.githubconsumer.viewmodels.gitrepository.context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.maximo.douglas.data.repository.GitRepositoryRepository
-import com.maximo.douglas.domain.entities.gitrepository.GitRepository
+import com.maximo.douglas.domain.entity.gitrepository.GitRepository
 import com.maximo.douglas.githubconsumer.testutils.TestContextProvider
 import com.maximo.douglas.githubconsumer.testutils.TestCoroutineRule
 import com.maximo.douglas.githubconsumer.testutils.faker.GitRepositoryFaker

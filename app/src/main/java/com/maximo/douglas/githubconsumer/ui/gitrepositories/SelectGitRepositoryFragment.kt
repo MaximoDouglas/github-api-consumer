@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.SelectGitRepositoryFragmentBinding
-import com.maximo.douglas.domain.entities.gitrepository.GitRepository
+import com.maximo.douglas.domain.entity.gitrepository.GitRepository
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryFragmentDirections.actionSelectRepositoryFragmentToSelectGitPullRequestFragment
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.adapters.SelectGitRepositoryAdapter
