@@ -14,10 +14,11 @@ class Application : Application() {
         startKoin {
             modules(
                 listOf(
-                    viewModelModule,
-                    repositoryModule,
                     commonsModule,
-                    useCaseModule
+                    serviceModule,
+                    repositoryModule,
+                    useCaseModule,
+                    viewModelModule
                 )
             )
         }

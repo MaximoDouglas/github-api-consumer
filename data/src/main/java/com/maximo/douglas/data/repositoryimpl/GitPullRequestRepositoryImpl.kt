@@ -1,17 +1,7 @@
-package com.maximo.douglas.data.repository
+package com.maximo.douglas.data.repositoryimpl
 
-import com.maximo.douglas.data.remote.gitpullrequest.GitPullRequestApi
-import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
-
-interface GitPullRequestRepository {
-
-    suspend fun getGitPullRequestList(
-        owner: String,
-        repository: String,
-        page: Int?
-    ): List<GitPullRequest>
-
-}
+import com.maximo.douglas.data.remote.GitPullRequestApi
+import com.maximo.douglas.domain.repository.GitPullRequestRepository
 
 class GitPullRequestRepositoryImpl(
     private val mGitPullRequestApi: GitPullRequestApi

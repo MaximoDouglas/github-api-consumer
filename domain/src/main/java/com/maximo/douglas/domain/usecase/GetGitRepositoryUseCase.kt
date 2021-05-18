@@ -1,6 +1,6 @@
 package com.maximo.douglas.domain.usecase
 
-import com.maximo.douglas.data.repository.GitRepositoryRepository
+import com.maximo.douglas.domain.repository.GitRepositoryRepository
 import com.maximo.douglas.domain.entity.gitrepository.GitRepository
 
 interface GetGitRepositoryUseCase {

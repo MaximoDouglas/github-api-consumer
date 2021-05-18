@@ -1,6 +1,6 @@
 package com.maximo.douglas.domain.usecase
 
-import com.maximo.douglas.data.repository.GitPullRequestRepository
+import com.maximo.douglas.domain.repository.GitPullRequestRepository
 import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
 
 interface GetGitPullRequestUseCase {

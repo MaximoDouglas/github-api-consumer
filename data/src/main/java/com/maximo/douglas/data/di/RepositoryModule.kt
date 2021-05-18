@@ -1,9 +1,9 @@
 package com.maximo.douglas.data.di
 
-import com.maximo.douglas.data.repository.GitPullRequestRepository
-import com.maximo.douglas.data.repository.GitPullRequestRepositoryImpl
-import com.maximo.douglas.data.repository.GitRepositoryRepository
-import com.maximo.douglas.data.repository.GitRepositoryRepositoryImpl
+import com.maximo.douglas.data.repositoryimpl.GitPullRequestRepositoryImpl
+import com.maximo.douglas.data.repositoryimpl.GitRepositoryRepositoryImpl
+import com.maximo.douglas.domain.repository.GitPullRequestRepository
+import com.maximo.douglas.domain.repository.GitRepositoryRepository
 import org.koin.dsl.module
 
 @Suppress("USELESS_CAST")

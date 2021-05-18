@@ -23,3 +23,8 @@ data class GitPullRequest(
     }
 
 }
+
+enum class PullRequestStateEnum(val value: String) {
+    OPEN("open"),
+    CLOSED("closed")
+}

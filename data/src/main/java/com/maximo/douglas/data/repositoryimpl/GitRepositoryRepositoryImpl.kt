@@ -1,15 +1,8 @@
-package com.maximo.douglas.data.repository
+package com.maximo.douglas.data.repositoryimpl
 
-import com.maximo.douglas.data.remote.gitrepository.GitRepositoryApi
+import com.maximo.douglas.data.remote.GitRepositoryApi
 import com.maximo.douglas.domain.entity.gitrepository.GitRepository
-
-interface GitRepositoryRepository {
-
-    suspend fun getGitRepositoryList(
-        page: Int
-    ): List<GitRepository>
-
-}
+import com.maximo.douglas.domain.repository.GitRepositoryRepository
 
 class GitRepositoryRepositoryImpl(
     private val mGitRepositoryApi: GitRepositoryApi

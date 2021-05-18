@@ -2,8 +2,9 @@ package com.maximo.douglas.githubconsumer.viewmodels.gitpullrequest.context
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.maximo.douglas.data.repository.GitPullRequestRepository
+import com.maximo.douglas.domain.repository.GitPullRequestRepository
 import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
+import com.maximo.douglas.domain.usecase.GetGitPullRequestUseCase
 import com.maximo.douglas.githubconsumer.testutils.TestContextProvider
 import com.maximo.douglas.githubconsumer.testutils.TestCoroutineRule
 import com.maximo.douglas.githubconsumer.testutils.faker.GitPullRequestFaker
@@ -27,7 +28,7 @@ open class SelectGitPullRequestViewModelTest {
     val testCoroutineRule = TestCoroutineRule()
 
     @Mock
-    private lateinit var mGitPullRequestRepository: GitPullRequestRepository
+    private lateinit var mGetGitPullRequestUseCase: GetGitPullRequestUseCase
 
     @Mock
     private lateinit var mViewStateObserver: Observer<SelectGitPullRequestViewModelState>
@@ -51,7 +52,7 @@ open class SelectGitPullRequestViewModelTest {
         MockitoAnnotations.initMocks(this)
 
         mSelectPullRequestViewModel = SelectGitPullRequestViewModel(
-            gitPullRequestRemoteDataSource = mGitPullRequestRepository,
+            getGitPullRequestUseCase = mGetGitPullRequestUseCase,
             contextProvider = TestContextProvider()
         ).apply {
             getStateLiveData().observeForever(mViewStateObserver)
@@ -69,7 +70,7 @@ open class SelectGitPullRequestViewModelTest {
     fun `should success when data source returns the expected data`() =
         testCoroutineRule.runBlockingTest {
             `when`(
-                mGitPullRequestRepository.getGitPullRequestList(
+                mGetGitPullRequestUseCase.invoke(
                     repository = FAKE_REPOSITORY_NAME,
                     owner = FAKE_USER_LOGIN,
                     page = FAKE_REQUEST_PAGE
@@ -96,7 +97,7 @@ open class SelectGitPullRequestViewModelTest {
         testCoroutineRule.runBlockingTest {
             val error = Error()
             `when`(
-                mGitPullRequestRepository.getGitPullRequestList(
+                mGetGitPullRequestUseCase.invoke(
                     repository = FAKE_REPOSITORY_NAME,
                     owner = FAKE_USER_LOGIN,
                     page = FAKE_REQUEST_PAGE

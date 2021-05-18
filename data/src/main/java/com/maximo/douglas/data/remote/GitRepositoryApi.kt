@@ -1,4 +1,4 @@
-package com.maximo.douglas.data.remote.gitrepository
+package com.maximo.douglas.data.remote
 
 import com.maximo.douglas.data.model.GitRepositoryApiResponse
 import retrofit2.http.GET
