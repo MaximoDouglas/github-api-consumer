@@ -2,7 +2,9 @@ package com.maximo.douglas.githubconsumer.features.gitpullrequests
 
 import android.content.Intent
 import android.net.Uri
-import androidx.test.core.app.ActivityScenario
+import android.os.Bundle
+import androidx.fragment.app.testing.FragmentScenario
+import androidx.lifecycle.Lifecycle
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -12,13 +14,15 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import br.com.argmax.githubconsumer.R
+import com.maximo.douglas.commons.utils.NavigationArgumentKeys.KEY_OWNER_LOGIN
+import com.maximo.douglas.commons.utils.NavigationArgumentKeys.KEY_REPOSITORY_NAME
 import com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots
 import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestClosedLabelStringFormat
 import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestOpenLabelStringFormat
 import com.maximo.douglas.githubconsumer.testutils.FileUtils
 import com.maximo.douglas.githubconsumer.testutils.RecyclerViewMatcher.Companion.withRecyclerView
 import com.maximo.douglas.githubconsumer.testutils.ThreadUtil.waitViewToComplete
-import com.maximo.douglas.githubconsumer.ui.MainActivity
+import com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestFragment
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -37,6 +41,8 @@ class SelectGitPullRequestFragmentTest {
 
         private const val PULL_REQUEST_HTML_URL = "https://github.com/CyC2018/CS-Notes/pull/957"
 
+        private const val REPOSITORY_OWNER_NAME = "CyC2018"
+
         private const val USER_NAME = "TC-zerol"
 
         private val OPEN_LABEL_TEXT = gitPullRequestOpenLabelStringFormat(8)
@@ -50,24 +56,30 @@ class SelectGitPullRequestFragmentTest {
 
     }
 
-    private var mActivityScenario: ActivityScenario<MainActivity>? = null
     private val mockWebServer = MockWebServer()
 
     @Before
     fun setup() {
         setupMockWebServer()
-        mActivityScenario = ActivityScenario.launch(MainActivity::class.java)
-
+        launchFragment()
         waitViewToComplete()
+    }
 
-        onView(
-            withRecyclerView(R.id.select_repository_fragment_recycler_view)
-                .atPositionOnView(
-                    0,
-                    R.id.gitRepositoryCard
-                )
-        ).perform(ViewActions.click())
-        waitViewToComplete()
+    private fun launchFragment() {
+        val themeResId: Int = R.style.AppTheme
+        val initialState = Lifecycle.State.RESUMED
+
+        val fragmentArgs = Bundle()
+        fragmentArgs.putString(KEY_OWNER_LOGIN, REPOSITORY_OWNER_NAME)
+        fragmentArgs.putString(KEY_REPOSITORY_NAME, REPOSITORY_NAME)
+
+        FragmentScenario.Companion.launchInContainer(
+            SelectGitPullRequestFragment::class.java,
+            fragmentArgs,
+            themeResId,
+            initialState,
+            null
+        )
     }
 
     @After
@@ -152,17 +164,12 @@ class SelectGitPullRequestFragmentTest {
     }
 
     private fun setupMockWebServer() {
-        val endpointToRepositories = "/search/repositories?q=language%3AJava&sort=stars&page=1"
         val endpointToPullRequests = "/repos/CyC2018/CS-Notes/pulls?page=1&state=all"
 
         val dispatcher = object : Dispatcher() {
             @Throws(InterruptedException::class)
             override fun dispatch(request: RecordedRequest): MockResponse {
                 when (request.path) {
-                    endpointToRepositories -> return MockResponse()
-                        .setResponseCode(200)
-                        .setBody(FileUtils.getJsonFromFile("jsonfiles/repositories/git_repository_api_response.json"))
-
                     endpointToPullRequests -> return MockResponse()
                         .setResponseCode(200)
                         .setBody(FileUtils.getJsonFromFile("jsonfiles/pullrequests/git_pull_request_api_response_cyc2018_cs_notes.json"))
