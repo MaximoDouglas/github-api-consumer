@@ -8,16 +8,12 @@ App to list popular Java Repositories on github.
 
 ### Stack
 - MVVM
-- Coroutines
-- Retrofit
-- GSON
-- Glide
 - Koin
+- Coroutines
+- Retrofit + gson
+- Glide
 - Espresso for instrumentation tests
-- JUnit for business logic unit tests
-- JUnit for ViewModel unit tests
+- JUnit unit tests
 - Robolectric for custom component unit tests 
-- Android Jetpack
-- Databinding
-- Safe Args
-- Material Design 2.0
+- Android Jetpack Navigation and SafeArgs
+- DataBinding
