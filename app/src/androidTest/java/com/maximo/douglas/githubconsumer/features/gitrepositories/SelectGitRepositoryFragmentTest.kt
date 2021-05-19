@@ -1,15 +1,16 @@
 package com.maximo.douglas.githubconsumer.features.gitrepositories
 
-import androidx.test.core.app.ActivityScenario
+import androidx.fragment.app.testing.FragmentScenario
+import androidx.lifecycle.Lifecycle
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import br.com.argmax.githubconsumer.R
+import com.maximo.douglas.commons.utils.StringUtils
 import com.maximo.douglas.githubconsumer.testutils.FileUtils.getJsonFromFile
 import com.maximo.douglas.githubconsumer.testutils.RecyclerViewMatcher.Companion.withRecyclerView
 import com.maximo.douglas.githubconsumer.testutils.ThreadUtil.waitViewToComplete
-import com.maximo.douglas.githubconsumer.ui.MainActivity
+import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryFragment
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
@@ -28,20 +29,32 @@ class SelectGitRepositoryFragmentTest {
 
         private const val REPOSITORY_FORKS_COUNT = 34768.toString()
 
-        private val REPOSITORY_DESCRIPTION = com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots(
+        private val REPOSITORY_DESCRIPTION = StringUtils.compactStringWithDots(
             ":books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计、Java、Python、C++"
         )
 
     }
 
     private val mMockWebServer = MockWebServer()
-    private var mActivityScenario: ActivityScenario<MainActivity>? = null
 
     @Before
     fun setup() {
         setupMockWebServer()
-        mActivityScenario = ActivityScenario.launch(MainActivity::class.java)
+        launchFragment()
         waitViewToComplete()
+    }
+
+    private fun launchFragment() {
+        val themeResId: Int = R.style.AppTheme
+        val initialState = Lifecycle.State.RESUMED
+
+        FragmentScenario.Companion.launchInContainer(
+            SelectGitRepositoryFragment::class.java,
+            null,
+            themeResId,
+            initialState,
+            null
+        )
     }
 
     @After
@@ -113,19 +126,6 @@ class SelectGitRepositoryFragmentTest {
             withRecyclerView(R.id.select_repository_fragment_recycler_view)
                 .atPositionOnView(0, R.id.git_repository_card_user_name_text_view)
         ).check(matches(withText(REPOSITORY_OWNER_NAME)))
-    }
-
-    @Test
-    fun test_if_click_on_repository_item_navigate_to_pull_request_fragment() {
-        onView(
-            withRecyclerView(R.id.select_repository_fragment_recycler_view)
-                .atPositionOnView(
-                    0,
-                    R.id.gitRepositoryCard
-                )
-        ).perform(ViewActions.click())
-
-        onView(withId(R.id.select_git_pull_request_fragment_toolbar)).check(matches(isDisplayed()))
     }
 
     private fun setupMockWebServer() {
