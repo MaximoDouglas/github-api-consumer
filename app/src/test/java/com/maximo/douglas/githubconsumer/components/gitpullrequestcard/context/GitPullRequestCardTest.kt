@@ -6,7 +6,7 @@ import com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots
 import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
 import com.maximo.douglas.domain.entity.user.GitUser
 import com.maximo.douglas.githubconsumer.testutils.BaseComponentTest
-import com.maximo.douglas.githubconsumer.ui.components.pullrequestcard.GitPullRequestCardComponent
+import com.maximo.douglas.features.components.pullrequestcard.GitPullRequestCardComponent
 import kotlinx.android.synthetic.main.git_pull_request_card_component.view.*
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
