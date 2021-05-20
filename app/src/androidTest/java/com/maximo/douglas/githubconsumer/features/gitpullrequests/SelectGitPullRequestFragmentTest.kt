@@ -22,7 +22,7 @@ import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestOpenLabelStrin
 import com.maximo.douglas.githubconsumer.testutils.FileUtils
 import com.maximo.douglas.githubconsumer.testutils.RecyclerViewMatcher.Companion.withRecyclerView
 import com.maximo.douglas.githubconsumer.testutils.ThreadUtil.waitViewToComplete
-import com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestFragment
+import com.maximo.douglas.features.gitpullrequests.SelectGitPullRequestFragment
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -74,7 +74,7 @@ class SelectGitPullRequestFragmentTest {
         fragmentArgs.putString(KEY_REPOSITORY_NAME, REPOSITORY_NAME)
 
         FragmentScenario.Companion.launchInContainer(
-            SelectGitPullRequestFragment::class.java,
+            com.maximo.douglas.features.gitpullrequests.SelectGitPullRequestFragment::class.java,
             fragmentArgs,
             themeResId,
             initialState,

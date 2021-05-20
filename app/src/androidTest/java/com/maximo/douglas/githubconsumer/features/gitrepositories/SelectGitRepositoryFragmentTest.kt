@@ -10,7 +10,7 @@ import com.maximo.douglas.commons.utils.StringUtils
 import com.maximo.douglas.githubconsumer.testutils.FileUtils.getJsonFromFile
 import com.maximo.douglas.githubconsumer.testutils.RecyclerViewMatcher.Companion.withRecyclerView
 import com.maximo.douglas.githubconsumer.testutils.ThreadUtil.waitViewToComplete
-import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryFragment
+import com.maximo.douglas.features.gitrepositories.SelectGitRepositoryFragment
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
@@ -49,7 +49,7 @@ class SelectGitRepositoryFragmentTest {
         val initialState = Lifecycle.State.RESUMED
 
         FragmentScenario.Companion.launchInContainer(
-            SelectGitRepositoryFragment::class.java,
+            com.maximo.douglas.features.gitrepositories.SelectGitRepositoryFragment::class.java,
             null,
             themeResId,
             initialState,
