@@ -6,7 +6,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import com.maximo.douglas.commons.testutils.FileUtils.getJsonFromFile
-import com.maximo.douglas.commons.testutils.RecyclerViewMatcher.Companion.withRecyclerView
+import com.maximo.douglas.features.instrumentedutils.RecyclerViewMatcher.Companion.withRecyclerView
 import com.maximo.douglas.commons.testutils.ThreadUtil.waitViewToComplete
 import com.maximo.douglas.commons.utils.StringUtils
 import com.maximo.douglas.features.R

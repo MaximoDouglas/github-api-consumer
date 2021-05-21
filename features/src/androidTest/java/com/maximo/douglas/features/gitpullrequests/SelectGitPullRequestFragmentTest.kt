@@ -13,9 +13,8 @@ import androidx.test.espresso.intent.matcher.IntentMatchers
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
-import com.maximo.douglas.commons.testutils.FileUtils
 import com.maximo.douglas.commons.testutils.FileUtils.getJsonFromFile
-import com.maximo.douglas.commons.testutils.RecyclerViewMatcher.Companion.withRecyclerView
+import com.maximo.douglas.features.instrumentedutils.RecyclerViewMatcher.Companion.withRecyclerView
 import com.maximo.douglas.commons.testutils.ThreadUtil.waitViewToComplete
 import com.maximo.douglas.commons.utils.NavigationArgumentKeys.KEY_OWNER_LOGIN
 import com.maximo.douglas.commons.utils.NavigationArgumentKeys.KEY_REPOSITORY_NAME
