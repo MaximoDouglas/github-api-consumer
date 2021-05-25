@@ -14,15 +14,14 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import br.com.argmax.githubconsumer.R
+import com.maximo.douglas.commons.testutils.FileUtils.getJsonFromFile
+import com.maximo.douglas.commons.testutils.ThreadUtil.waitViewToComplete
 import com.maximo.douglas.commons.utils.NavigationArgumentKeys.KEY_OWNER_LOGIN
 import com.maximo.douglas.commons.utils.NavigationArgumentKeys.KEY_REPOSITORY_NAME
 import com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots
 import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestClosedLabelStringFormat
 import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestOpenLabelStringFormat
-import com.maximo.douglas.githubconsumer.testutils.FileUtils
-import com.maximo.douglas.githubconsumer.testutils.RecyclerViewMatcher.Companion.withRecyclerView
-import com.maximo.douglas.githubconsumer.testutils.ThreadUtil.waitViewToComplete
-import com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestFragment
+import com.maximo.douglas.githubconsumer.instrumentedutils.RecyclerViewMatcher.Companion.withRecyclerView
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -74,7 +73,7 @@ class SelectGitPullRequestFragmentTest {
         fragmentArgs.putString(KEY_REPOSITORY_NAME, REPOSITORY_NAME)
 
         FragmentScenario.Companion.launchInContainer(
-            SelectGitPullRequestFragment::class.java,
+            com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestFragment::class.java,
             fragmentArgs,
             themeResId,
             initialState,
@@ -172,7 +171,7 @@ class SelectGitPullRequestFragmentTest {
                 when (request.path) {
                     endpointToPullRequests -> return MockResponse()
                         .setResponseCode(200)
-                        .setBody(FileUtils.getJsonFromFile("jsonfiles/pullrequests/git_pull_request_api_response_cyc2018_cs_notes.json"))
+                        .setBody(getJsonFromFile("jsonfiles/pullrequests/git_pull_request_api_response_cyc2018_cs_notes.json"))
                 }
 
                 return MockResponse().setResponseCode(404)

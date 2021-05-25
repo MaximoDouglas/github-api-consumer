@@ -1,4 +1,4 @@
-package com.maximo.douglas.githubconsumer.testutils
+package com.maximo.douglas.commons.testutils
 
 object FileUtils {
 

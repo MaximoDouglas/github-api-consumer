@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.argmax.githubconsumer.R
 import br.com.argmax.githubconsumer.databinding.SelectGitRepositoryFragmentBinding
+import com.maximo.douglas.commons.utils.EndlessRecyclerOnScrollListener
 import com.maximo.douglas.domain.entity.gitrepository.GitRepository
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryFragmentDirections.actionSelectRepositoryFragmentToSelectGitPullRequestFragment
 import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
@@ -62,7 +63,7 @@ class SelectGitRepositoryFragment : Fragment(), OnGitRepositoryClickListener {
 
         mBinding?.selectRepositoryFragmentRecyclerView?.adapter = mAdapter
         mBinding?.selectRepositoryFragmentRecyclerView?.addOnScrollListener(object :
-            com.maximo.douglas.commons.utils.EndlessRecyclerOnScrollListener() {
+            EndlessRecyclerOnScrollListener() {
             override fun onLoadMore() {
                 mApiRequestPage++
                 loadData()
