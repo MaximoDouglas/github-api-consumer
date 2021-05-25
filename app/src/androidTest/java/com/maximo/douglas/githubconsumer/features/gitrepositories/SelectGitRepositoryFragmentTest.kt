@@ -1,15 +1,15 @@
-package com.maximo.douglas.features.gitrepositories
+package com.maximo.douglas.githubconsumer.features.gitrepositories
 
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.lifecycle.Lifecycle
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
+import br.com.argmax.githubconsumer.R
 import com.maximo.douglas.commons.testutils.FileUtils.getJsonFromFile
-import com.maximo.douglas.features.instrumentedutils.RecyclerViewMatcher.Companion.withRecyclerView
 import com.maximo.douglas.commons.testutils.ThreadUtil.waitViewToComplete
 import com.maximo.douglas.commons.utils.StringUtils
-import com.maximo.douglas.features.R
+import com.maximo.douglas.githubconsumer.instrumentedutils.RecyclerViewMatcher.Companion.withRecyclerView
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
@@ -48,7 +48,7 @@ class SelectGitRepositoryFragmentTest {
         val initialState = Lifecycle.State.RESUMED
 
         FragmentScenario.Companion.launchInContainer(
-            com.maximo.douglas.features.gitrepositories.SelectGitRepositoryFragment::class.java,
+            com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryFragment::class.java,
             null,
             themeResId,
             initialState,

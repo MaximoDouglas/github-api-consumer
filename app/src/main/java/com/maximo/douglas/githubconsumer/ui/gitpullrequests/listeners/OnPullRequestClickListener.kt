@@ -1,4 +1,4 @@
-package com.maximo.douglas.features.gitpullrequests.listeners
+package com.maximo.douglas.githubconsumer.ui.gitpullrequests.listeners
 
 interface OnPullRequestClickListener {
 

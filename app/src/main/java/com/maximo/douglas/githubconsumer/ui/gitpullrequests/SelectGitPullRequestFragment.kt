@@ -1,4 +1,4 @@
-package com.maximo.douglas.features.gitpullrequests
+package com.maximo.douglas.githubconsumer.ui.gitpullrequests
 
 import android.content.Intent
 import android.net.Uri
@@ -13,6 +13,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.argmax.githubconsumer.R
+import br.com.argmax.githubconsumer.databinding.SelectGitPullRequestFragmentBinding
 import com.maximo.douglas.commons.utils.FragmentUtils.bundleContainsKeys
 import com.maximo.douglas.commons.utils.NavigationArgumentKeys.KEY_OWNER_LOGIN
 import com.maximo.douglas.commons.utils.NavigationArgumentKeys.KEY_REPOSITORY_NAME
@@ -20,11 +22,9 @@ import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestClosedLabelStr
 import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestOpenLabelStringFormat
 import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
 import com.maximo.douglas.domain.entity.gitpullrequest.PullRequestStateEnum
-import com.maximo.douglas.features.R
-import com.maximo.douglas.features.databinding.SelectGitPullRequestFragmentBinding
-import com.maximo.douglas.features.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
-import com.maximo.douglas.features.gitpullrequests.adapters.SelectGitPullRequestAdapter
-import com.maximo.douglas.features.gitpullrequests.listeners.OnPullRequestClickListener
+import com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
+import com.maximo.douglas.githubconsumer.ui.gitpullrequests.adapters.SelectGitPullRequestAdapter
+import com.maximo.douglas.githubconsumer.ui.gitpullrequests.listeners.OnPullRequestClickListener
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SelectGitPullRequestFragment : Fragment(), OnPullRequestClickListener {

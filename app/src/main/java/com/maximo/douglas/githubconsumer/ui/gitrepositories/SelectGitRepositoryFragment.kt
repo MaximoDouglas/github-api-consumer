@@ -1,4 +1,4 @@
-package com.maximo.douglas.features.gitrepositories
+package com.maximo.douglas.githubconsumer.ui.gitrepositories
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,14 +10,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.argmax.githubconsumer.R
+import br.com.argmax.githubconsumer.databinding.SelectGitRepositoryFragmentBinding
 import com.maximo.douglas.commons.utils.EndlessRecyclerOnScrollListener
 import com.maximo.douglas.domain.entity.gitrepository.GitRepository
-import com.maximo.douglas.features.R
-import com.maximo.douglas.features.databinding.SelectGitRepositoryFragmentBinding
-import com.maximo.douglas.features.gitrepositories.SelectGitRepositoryFragmentDirections.actionSelectRepositoryFragmentToSelectGitPullRequestFragment
-import com.maximo.douglas.features.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
-import com.maximo.douglas.features.gitrepositories.adapters.SelectGitRepositoryAdapter
-import com.maximo.douglas.features.gitrepositories.listeners.OnGitRepositoryClickListener
+import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryFragmentDirections.actionSelectRepositoryFragmentToSelectGitPullRequestFragment
+import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
+import com.maximo.douglas.githubconsumer.ui.gitrepositories.adapters.SelectGitRepositoryAdapter
+import com.maximo.douglas.githubconsumer.ui.gitrepositories.listeners.OnGitRepositoryClickListener
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SelectGitRepositoryFragment : Fragment(), OnGitRepositoryClickListener {

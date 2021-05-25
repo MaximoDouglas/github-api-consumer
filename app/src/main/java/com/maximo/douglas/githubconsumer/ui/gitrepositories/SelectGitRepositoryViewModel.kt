@@ -1,4 +1,4 @@
-package com.maximo.douglas.features.gitrepositories
+package com.maximo.douglas.githubconsumer.ui.gitrepositories
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

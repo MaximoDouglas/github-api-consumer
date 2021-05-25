@@ -1,13 +1,13 @@
-package com.maximo.douglas.features.components.repositorycard
+package com.maximo.douglas.githubconsumer.ui.components.repositorycard
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
+import br.com.argmax.githubconsumer.R
+import br.com.argmax.githubconsumer.databinding.GitRepositoryCardComponentBinding
 import com.maximo.douglas.domain.entity.gitrepository.GitRepository
-import com.maximo.douglas.features.R
-import com.maximo.douglas.features.databinding.GitRepositoryCardComponentBinding
 
 class GitRepositoryCardComponent @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyle: Int = 0

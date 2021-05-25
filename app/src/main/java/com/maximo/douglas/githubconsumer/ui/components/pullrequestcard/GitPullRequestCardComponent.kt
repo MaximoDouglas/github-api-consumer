@@ -1,13 +1,13 @@
-package com.maximo.douglas.features.components.pullrequestcard
+package com.maximo.douglas.githubconsumer.ui.components.pullrequestcard
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
+import br.com.argmax.githubconsumer.R
+import br.com.argmax.githubconsumer.databinding.GitPullRequestCardComponentBinding
 import com.maximo.douglas.domain.entity.gitpullrequest.GitPullRequest
-import com.maximo.douglas.features.R
-import com.maximo.douglas.features.databinding.GitPullRequestCardComponentBinding
 
 class GitPullRequestCardComponent @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyle: Int = 0

@@ -1,4 +1,4 @@
-package com.maximo.douglas.features.gitpullrequests
+package com.maximo.douglas.githubconsumer.features.gitpullrequests
 
 import android.content.Intent
 import android.net.Uri
@@ -13,15 +13,15 @@ import androidx.test.espresso.intent.matcher.IntentMatchers
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
+import br.com.argmax.githubconsumer.R
 import com.maximo.douglas.commons.testutils.FileUtils.getJsonFromFile
-import com.maximo.douglas.features.instrumentedutils.RecyclerViewMatcher.Companion.withRecyclerView
 import com.maximo.douglas.commons.testutils.ThreadUtil.waitViewToComplete
 import com.maximo.douglas.commons.utils.NavigationArgumentKeys.KEY_OWNER_LOGIN
 import com.maximo.douglas.commons.utils.NavigationArgumentKeys.KEY_REPOSITORY_NAME
 import com.maximo.douglas.commons.utils.StringUtils.compactStringWithDots
 import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestClosedLabelStringFormat
 import com.maximo.douglas.commons.utils.StringUtils.gitPullRequestOpenLabelStringFormat
-import com.maximo.douglas.features.R
+import com.maximo.douglas.githubconsumer.instrumentedutils.RecyclerViewMatcher.Companion.withRecyclerView
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -73,7 +73,7 @@ class SelectGitPullRequestFragmentTest {
         fragmentArgs.putString(KEY_REPOSITORY_NAME, REPOSITORY_NAME)
 
         FragmentScenario.Companion.launchInContainer(
-            com.maximo.douglas.features.gitpullrequests.SelectGitPullRequestFragment::class.java,
+            com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestFragment::class.java,
             fragmentArgs,
             themeResId,
             initialState,

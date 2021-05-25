@@ -1,4 +1,4 @@
-package com.maximo.douglas.features.gitpullrequests
+package com.maximo.douglas.githubconsumer.ui.gitpullrequests
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

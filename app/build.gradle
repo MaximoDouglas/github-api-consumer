@@ -63,7 +63,6 @@ android {
 
 dependencies {
     implementation project(":commons")
-    implementation project(":features")
     implementation project(":domain")
     implementation project(":data")
 

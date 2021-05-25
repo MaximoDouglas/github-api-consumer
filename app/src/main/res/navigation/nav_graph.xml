@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/selectRepositoryFragment"
-        android:name="com.maximo.douglas.features.gitrepositories.SelectGitRepositoryFragment"
+        android:name="com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryFragment"
         android:label="SelectRepositoryFragment">
 
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/selectGitPullRequestFragment"
-        android:name="com.maximo.douglas.features.gitpullrequests.SelectGitPullRequestFragment"
+        android:name="com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestFragment"
         android:label="SelectGitPullRequestFragment">
 
         <argument

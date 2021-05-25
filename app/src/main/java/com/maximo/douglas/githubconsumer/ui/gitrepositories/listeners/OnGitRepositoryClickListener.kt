@@ -1,4 +1,4 @@
-package com.maximo.douglas.features.gitrepositories.listeners
+package com.maximo.douglas.githubconsumer.ui.gitrepositories.listeners
 
 interface OnGitRepositoryClickListener {
 
