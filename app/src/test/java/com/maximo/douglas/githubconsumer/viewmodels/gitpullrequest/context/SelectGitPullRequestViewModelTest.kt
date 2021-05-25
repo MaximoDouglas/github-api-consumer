@@ -7,8 +7,8 @@ import com.maximo.douglas.domain.usecase.GetGitPullRequestUseCase
 import com.maximo.douglas.githubconsumer.testutils.TestContextProvider
 import com.maximo.douglas.githubconsumer.testutils.TestCoroutineRule
 import com.maximo.douglas.githubconsumer.testutils.faker.GitPullRequestFaker
-import com.maximo.douglas.features.gitpullrequests.SelectGitPullRequestViewModel
-import com.maximo.douglas.features.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
+import com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel
+import com.maximo.douglas.githubconsumer.ui.gitpullrequests.SelectGitPullRequestViewModel.SelectGitPullRequestViewModelState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
@@ -32,7 +32,7 @@ open class SelectGitPullRequestViewModelTest {
     @Mock
     private lateinit var mViewStateObserver: Observer<SelectGitPullRequestViewModelState>
 
-    private lateinit var mSelectPullRequestViewModel: com.maximo.douglas.features.gitpullrequests.SelectGitPullRequestViewModel
+    private lateinit var mSelectPullRequestViewModel: SelectGitPullRequestViewModel
 
     private var mGitPullRequestList = listOf<GitPullRequest>()
 
@@ -50,7 +50,7 @@ open class SelectGitPullRequestViewModelTest {
     fun setup() {
         MockitoAnnotations.initMocks(this)
 
-        mSelectPullRequestViewModel = com.maximo.douglas.features.gitpullrequests.SelectGitPullRequestViewModel(
+        mSelectPullRequestViewModel = SelectGitPullRequestViewModel(
             getGitPullRequestUseCase = mGetGitPullRequestUseCase,
             contextProvider = TestContextProvider()
         ).apply {

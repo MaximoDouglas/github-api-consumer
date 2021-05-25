@@ -7,8 +7,8 @@ import com.maximo.douglas.domain.usecase.GetGitRepositoryUseCase
 import com.maximo.douglas.githubconsumer.testutils.TestContextProvider
 import com.maximo.douglas.githubconsumer.testutils.TestCoroutineRule
 import com.maximo.douglas.githubconsumer.testutils.faker.GitRepositoryFaker
-import com.maximo.douglas.features.gitrepositories.SelectGitRepositoryViewModel
-import com.maximo.douglas.features.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
+import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel
+import com.maximo.douglas.githubconsumer.ui.gitrepositories.SelectGitRepositoryViewModel.SelectGitRepositoryViewModelState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
@@ -32,7 +32,7 @@ open class SelectGitRepositoryViewModelTest {
     @Mock
     private lateinit var mViewStateObserver: Observer<SelectGitRepositoryViewModelState>
 
-    private lateinit var mSelectRepositoryViewModel: com.maximo.douglas.features.gitrepositories.SelectGitRepositoryViewModel
+    private lateinit var mSelectRepositoryViewModel: SelectGitRepositoryViewModel
 
     private var mGitRepositoryList = listOf<GitRepository>()
 
@@ -46,7 +46,7 @@ open class SelectGitRepositoryViewModelTest {
     fun setup() {
         MockitoAnnotations.initMocks(this)
 
-        mSelectRepositoryViewModel = com.maximo.douglas.features.gitrepositories.SelectGitRepositoryViewModel(
+        mSelectRepositoryViewModel = SelectGitRepositoryViewModel(
             getGitRepositoryUseCase = mGetGitRepositoryUseCase,
             contextProvider = TestContextProvider()
         ).apply {
