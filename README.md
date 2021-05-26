@@ -16,7 +16,7 @@ App to list popular Java Repositories on github.
 - Retrofit + gson
 - Glide
 - Espresso for instrumentation tests
-- JUnit unit tests
+- JUnit for unit tests
 - Robolectric for custom component unit tests 
-- Android Jetpack Navigation and SafeArgs
+- Android Jetpack Navigation + SafeArgs
 - DataBinding
