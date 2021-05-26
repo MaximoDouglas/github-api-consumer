@@ -8,6 +8,9 @@ App to list popular Java Repositories on github.
 
 ### Stack
 - MVVM
+- Clean architecture
+- Modular architecture
+- Single activity pattern
 - Koin
 - Coroutines
 - Retrofit + gson
