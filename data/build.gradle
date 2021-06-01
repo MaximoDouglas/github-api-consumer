@@ -1,8 +1,7 @@
 plugins {
-    id 'com.android.library'
-    id 'kotlin-android'
-    id 'kotlin-android-extensions'
-    id 'kotlin-kapt'
+    id "com.android.library"
+    id "kotlin-android"
+    id "kotlin-android-extensions"
 }
 
 android {
@@ -21,12 +20,12 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
 
         debug {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
 
@@ -39,10 +38,6 @@ android {
         prod {
             buildConfigField "String", "BASE_URL", "\"https://api.github.com/\""
         }
-    }
-
-    dataBinding {
-        enabled = true
     }
 
     compileOptions {
@@ -62,8 +57,6 @@ android {
 dependencies {
     implementation project(":domain")
     implementation project(":commons")
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.9.0"
     implementation "io.insert-koin:koin-android:3.0.1"
 }

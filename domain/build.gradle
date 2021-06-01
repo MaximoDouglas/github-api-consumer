@@ -1,8 +1,7 @@
 plugins {
-    id 'com.android.library'
-    id 'kotlin-android'
-    id 'kotlin-android-extensions'
-    id 'kotlin-kapt'
+    id "com.android.library"
+    id "kotlin-android"
+    id "kotlin-android-extensions"
 }
 
 android {
@@ -21,12 +20,12 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
 
         debug {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
 
@@ -35,10 +34,6 @@ android {
     productFlavors {
         mock {}
         prod {}
-    }
-
-    dataBinding {
-        enabled = true
     }
 
     compileOptions {
@@ -57,8 +52,6 @@ android {
 
 dependencies {
     implementation project(":commons")
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "io.insert-koin:koin-android:3.0.1"
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 }
