@@ -1,6 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext.kotlin_version = "1.4.30"
+    ext.koin_android = "3.0.1"
+    ext.navigation_ui_ktx = "2.3.5"
+    ext.glide = "4.12.0"
+    ext.glide_transformations = "4.3.0"
+    ext.retrofit = "2.9.0"
+    ext.okhttp = "4.9.1"
+    ext.junit = "4.13.2"
+
     repositories {
         google()
         mavenCentral()
