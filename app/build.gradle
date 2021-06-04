@@ -61,11 +61,11 @@ android {
 }
 
 dependencies {
+    api "com.google.android.material:material:1.4.0-beta01"
+
     implementation project(":commons")
     implementation project(":domain")
     implementation project(":data")
-
-    api "com.google.android.material:material:1.4.0-beta01"
 
     implementation "io.insert-koin:koin-android:3.0.1"
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
